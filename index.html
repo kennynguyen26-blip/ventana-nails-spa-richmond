@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ventana Nails & Spa Richmond | Luxury Nail Salon in Richmond, TX</title>
+<meta name="description" content="Richmond's premier nail salon. Luxury manicures, pedicures, acrylics, and spa services. 4.8 stars · 667+ reviews. Located at 9711 Mason Rd Ste 120, Richmond, TX 77407.">
+<meta name="keywords" content="nail salon Richmond TX, luxury nails Richmond, manicure pedicure Richmond Texas, Ventana Nails Spa">
+<meta property="og:title" content="Ventana Nails & Spa Richmond">
+<meta property="og:description" content="Richmond's premier destination for luxury nail care, relaxation, and rejuvenation.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://ventananailssparichmond.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================
+   RESET & VARIABLES
+   ============================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black:       #1A1A1A;
+  --dark:        #333333;
+  --white:       #FFFFFF;
+  --off-white:   #FAFAFA;
+  --light:       #F5F5F5;
+  --gold:        #D4AF37;
+  --gold-light:  #E6C550;
+  --gold-deep:   #C5A028;
+  --gold-pale:   #FBF5DC;
+  --warm-gray:   #E8E4DF;
+  --warm-gray-dk:#D1CBC4;
+  --mid-gray:    #888888;
+  --font-h:      'Cormorant Garamond', Georgia, serif;
+  --font-b:      'Montserrat', sans-serif;
+  --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --t:           all 0.32s var(--ease);
+  --radius:      12px;
+  --shadow-xs:   0 2px 12px rgba(0,0,0,0.06);
+  --shadow-sm:   0 4px 24px rgba(0,0,0,0.08);
+  --shadow-md:   0 8px 40px rgba(0,0,0,0.11);
+  --shadow-lg:   0 16px 60px rgba(0,0,0,0.14);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-b);
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* ============================
+   UTILITY
+   ============================ */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+
+.section-tag {
+  font-family: var(--font-b);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 14px;
+}
+.section-title {
+  font-family: var(--font-h);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.1;
+}
+.section-title em { font-style: italic; color: var(--gold-deep); }
+
+.gold-line {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin: 20px auto 0;
+}
+.gold-line.left { margin: 20px 0 0; }
+
+/* ============================
+   ANIMATIONS
+   ============================ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.fade-in.visible { opacity: 1; }
+
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.16s; }
+.stagger-3 { transition-delay: 0.24s; }
+.stagger-4 { transition-delay: 0.32s; }
+.stagger-5 { transition-delay: 0.40s; }
+.stagger-6 { transition-delay: 0.48s; }
+
+/* ============================
+   NAVIGATION
+   ============================ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 22px 0;
+  transition: var(--t);
+}
+nav.scrolled {
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212,175,55,0.2);
+  padding: 14px 0;
+  box-shadow: var(--shadow-xs);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; }
+.nav-logo-img { height: 70px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  transition: color 0.25s;
+  position: relative;
+}
+nav.scrolled .nav-links a { color: var(--dark); }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after, .nav-links a:hover { color: var(--gold) !important; }
+.nav-links a:hover::after { width: 100%; }
+.nav-book-btn {
+  background: var(--gold) !important;
+  color: var(--black) !important;
+  padding: 10px 22px;
+  border-radius: 2px;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px;
+  transition: var(--t) !important;
+}
+.nav-book-btn::after { display: none !important; }
+.nav-book-btn:hover {
+  background: var(--gold-deep) !important;
+  color: var(--white) !important;
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 24px; height: 1.5px;
+  background: var(--white);
+  transition: var(--t);
+  transform-origin: center;
+}
+nav.scrolled .hamburger span { background: var(--black); }
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.mobile-menu.open { display: flex; opacity: 1; pointer-events: all; }
+.mobile-menu a {
+  font-family: var(--font-h);
+  font-size: 38px;
+  font-weight: 300;
+  color: var(--white);
+  transition: color 0.25s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .mobile-book {
+  margin-top: 8px;
+  background: var(--gold);
+  color: var(--black);
+  padding: 14px 40px;
+  border-radius: 2px;
+  font-family: var(--font-b);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* ============================
+   HERO
+   ============================ */
+#hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--black);
+}
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212,175,55,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+.hero-orb-1 {
+  width: 600px; height: 600px;
+  top: -200px; right: -100px;
+  background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, transparent 70%);
+}
+.hero-orb-2 {
+  width: 400px; height: 400px;
+  bottom: -80px; left: -80px;
+  background: radial-gradient(circle, rgba(197,160,40,0.12) 0%, transparent 70%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 820px;
+  padding: 120px 28px 80px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(212,175,55,0.4);
+  padding: 8px 22px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 44px;
+}
+.hero-badge .stars { color: var(--gold); letter-spacing: 3px; }
+.hero-title {
+  font-family: var(--font-h);
+  font-weight: 300;
+  line-height: 1.02;
+  margin-bottom: 30px;
+}
+.hero-title .line1 {
+  display: block;
+  font-size: clamp(72px, 12vw, 128px);
+  color: var(--white);
+  letter-spacing: -1px;
+}
+.hero-title .line2 {
+  display: block;
+  font-size: clamp(58px, 9.5vw, 100px);
+  color: var(--gold);
+  font-style: italic;
+}
+.hero-divider {
+  width: 60px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 0 auto 28px;
+}
+.hero-subtitle {
+  font-size: clamp(13px, 1.8vw, 16px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  max-width: 480px;
+  margin: 0 auto 52px;
+  line-height: 1.9;
+  letter-spacing: 0.5px;
+}
+.hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--black);
+  padding: 15px 36px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: var(--t);
+  border: 1.5px solid var(--gold);
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-gold:hover {
+  background: var(--gold-deep);
+  border-color: var(--gold-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(197,160,40,0.35);
+}
+.btn-outline-white {
+  background: transparent;
+  color: var(--white);
+  padding: 15px 36px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: var(--t);
+  border: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-outline-white:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+.btn-black {
+  background: var(--black);
+  color: var(--gold);
+  padding: 15px 36px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: var(--t);
+  border: 1.5px solid var(--black);
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-black:hover {
+  background: var(--dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.btn-outline-gold {
+  background: transparent;
+  color: var(--black);
+  padding: 15px 36px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: var(--t);
+  border: 1px solid rgba(212,175,55,0.5);
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-outline-gold:hover {
+  border-color: var(--gold);
+  color: var(--gold-deep);
+  transform: translateY(-2px);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 36px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.3);
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500;
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, rgba(212,175,55,0.6), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; } 50% { opacity: 1; }
+}
+
+/* ============================
+   INTRO STRIP
+   ============================ */
+#intro {
+  background: var(--off-white);
+  border-top: 1px solid var(--warm-gray);
+  border-bottom: 1px solid var(--warm-gray);
+  padding: 72px 0;
+}
+.intro-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding-bottom: 56px;
+  margin-bottom: 56px;
+  border-bottom: 1px solid var(--warm-gray);
+}
+.intro-feature {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 0 36px;
+  border-right: 1px solid var(--warm-gray);
+}
+.intro-feature:last-child { border-right: none; }
+.intro-icon { width: 44px; height: 44px; margin-bottom: 18px; color: var(--gold); }
+.intro-feature h3 {
+  font-family: var(--font-h);
+  font-size: 22px; font-weight: 500; color: var(--black); margin-bottom: 6px;
+}
+.intro-feature p { font-size: 12px; color: var(--mid-gray); letter-spacing: 0.3px; }
+
+.intro-welcome { max-width: 640px; margin: 0 auto; text-align: center; }
+.intro-welcome p {
+  font-size: 14px; font-weight: 300; color: var(--dark);
+  line-height: 1.95; letter-spacing: 0.3px;
+}
+
+/* ============================
+   SERVICES
+   ============================ */
+#services { padding: 120px 0; background: var(--white); }
+
+.services-header { text-align: center; margin-bottom: 52px; }
+.services-header .section-title { margin-bottom: 44px; }
+
+.service-tabs {
+  display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+}
+.tab-btn {
+  padding: 10px 26px;
+  border-radius: 2px;
+  border: 1px solid var(--warm-gray-dk);
+  background: transparent;
+  font-family: var(--font-b);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--mid-gray);
+  cursor: pointer;
+  transition: var(--t);
+}
+.tab-btn:hover { border-color: var(--gold); color: var(--gold-deep); }
+.tab-btn.active { background: var(--black); border-color: var(--black); color: var(--gold); }
+
+/* SERVICES LAYOUT: cards left, image right */
+.services-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+  align-items: start;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+.services-layout.switching { opacity: 0; }
+
+.services-cards-col { display: flex; flex-direction: column; gap: 12px; }
+
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--warm-gray);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  transition: var(--t);
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+}
+.service-card:hover {
+  border-color: var(--gold);
+  border-left-color: var(--gold-deep);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(3px);
+}
+.service-card-left { flex: 1; min-width: 0; }
+.service-card-name {
+  font-family: var(--font-h);
+  font-size: 20px; font-weight: 500; color: var(--black);
+  margin-bottom: 4px; line-height: 1.2;
+}
+.service-card-desc {
+  font-size: 0.95rem; color: var(--mid-gray); line-height: 1.6; font-weight: 300;
+}
+.desc-preview { display: block; }
+.desc-full {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.42s ease, opacity 0.42s ease;
+  opacity: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--mid-gray);
+  font-weight: 300;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--warm-gray);
+}
+.desc-full.expanded { max-height: 800px; opacity: 1; }
+.desc-toggle {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--gold-deep);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-b);
+  transition: color 0.25s;
+  text-shadow: none;
+}
+.desc-toggle:hover { color: var(--black); }
+.service-card-right {
+  display: flex; flex-direction: column; align-items: flex-end; gap: 10px; flex-shrink: 0;
+}
+.service-price {
+  font-family: var(--font-h);
+  font-size: 22px; font-weight: 500; color: var(--gold-deep);
+  white-space: nowrap;
+}
+.service-book-btn {
+  display: inline-block;
+  padding: 7px 16px;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.18);
+  border-radius: 2px;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--dark); cursor: pointer; transition: var(--t);
+  white-space: nowrap; font-family: var(--font-b);
+}
+.service-book-btn:hover {
+  background: var(--black); border-color: var(--black); color: var(--gold);
+}
+
+/* Category photo column */
+.services-photo-col { position: sticky; top: 100px; }
+.services-photo-placeholder {
+  border: 1px solid var(--gold-light);
+  border-radius: var(--radius);
+  min-height: 480px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+  background: linear-gradient(145deg, var(--off-white) 0%, var(--gold-pale) 100%);
+  color: var(--gold-deep);
+  padding: 40px 24px;
+  text-align: center;
+}
+.services-photo-placeholder svg { opacity: 0.5; }
+.services-photo-placeholder .ph-label {
+  font-family: var(--font-h);
+  font-size: 24px; font-weight: 400;
+  color: var(--gold-deep); margin-top: 4px;
+}
+.services-photo-placeholder .ph-sub {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); font-weight: 500;
+}
+.services-photo-placeholder .ph-note {
+  font-size: 11px; color: var(--warm-gray-dk);
+  font-weight: 400; margin-top: 8px;
+  border: 1px dashed var(--warm-gray-dk);
+  padding: 6px 14px; border-radius: 2px;
+}
+
+/* DRINKS MENU (tab 5) */
+.drinks-header { margin-bottom: 32px; }
+.drinks-header h3 {
+  font-family: var(--font-h); font-size: 32px; font-weight: 400; color: var(--black);
+  margin-bottom: 8px;
+}
+.drinks-header p { font-size: 13px; color: var(--mid-gray); font-weight: 300; }
+.drinks-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.drink-card {
+  border: 1px solid var(--gold-light);
+  border-radius: var(--radius);
+  background: var(--white);
+  padding: 10px;
+  transition: var(--t);
+  box-shadow: var(--shadow-xs);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 0 8px rgba(212,175,55,0.1);
+}
+.drink-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); border-color: var(--gold); }
+.drink-img { width: 100%; height: auto; display: block; border-radius: calc(var(--radius) - 4px); object-fit: contain; }
+.drinks-note {
+  margin-top: 28px; padding: 14px 24px;
+  border: 1px solid var(--gold-light); border-radius: var(--radius);
+  background: var(--gold-pale);
+  font-size: 12px; color: var(--dark);
+  font-weight: 500; letter-spacing: 0.5px; text-align: center;
+}
+
+/* ============================
+   REVIEWS
+   ============================ */
+#reviews { padding: 120px 0; background: var(--black); overflow: hidden; }
+.reviews-header { text-align: center; margin-bottom: 20px; }
+.reviews-header .section-tag { color: var(--gold); }
+.reviews-header .section-title { color: var(--white); }
+.reviews-header .section-title em { color: var(--gold); }
+
+.rating-badge {
+  display: inline-flex; align-items: center; gap: 16px;
+  border: 1px solid rgba(212,175,55,0.3);
+  padding: 16px 32px; margin: 0 auto 52px;
+  background: rgba(255,255,255,0.04);
+}
+.rating-number {
+  font-family: var(--font-h); font-size: 40px; font-weight: 500; color: var(--white); line-height: 1;
+}
+.rating-right { text-align: left; }
+.rating-stars { color: var(--gold); font-size: 16px; letter-spacing: 3px; }
+.rating-count { font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 500; letter-spacing: 0.5px; }
+
+.reviews-track-wrapper { position: relative; overflow: hidden; }
+.reviews-track-wrapper::before,
+.reviews-track-wrapper::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2; pointer-events: none;
+}
+.reviews-track-wrapper::before { left: 0; background: linear-gradient(to right, var(--black), transparent); }
+.reviews-track-wrapper::after { right: 0; background: linear-gradient(to left, var(--black), transparent); }
+
+.reviews-track {
+  display: flex; gap: 20px;
+  overflow-x: auto; padding: 12px 60px 32px;
+  scroll-snap-type: x mandatory; scrollbar-width: none; cursor: grab;
+}
+.reviews-track:active { cursor: grabbing; }
+.reviews-track::-webkit-scrollbar { display: none; }
+
+.review-card {
+  flex: 0 0 340px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  scroll-snap-align: start;
+  transition: var(--t);
+}
+.review-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(212,175,55,0.45); transform: translateY(-3px); }
+.review-stars { color: var(--gold); font-size: 14px; letter-spacing: 3px; margin-bottom: 18px; }
+.review-text {
+  font-family: var(--font-h); font-size: 17px; font-weight: 300;
+  color: rgba(255,255,255,0.82); line-height: 1.75; font-style: italic; margin-bottom: 20px;
+}
+.review-text::before { content: '\201C'; }
+.review-text::after { content: '\201D'; }
+.review-author {
+  font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--gold); text-transform: uppercase;
+}
+
+.reviews-nav { display: flex; justify-content: center; gap: 12px; margin-top: 16px; }
+.reviews-nav-btn {
+  width: 42px; height: 42px; border-radius: 2px;
+  border: 1px solid rgba(212,175,55,0.3);
+  background: transparent; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--t); color: rgba(255,255,255,0.5);
+}
+.reviews-nav-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
+
+/* ============================
+   GALLERY
+   ============================ */
+#gallery { padding: 120px 0; background: var(--light); }
+.gallery-header { text-align: center; margin-bottom: 56px; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+}
+.gallery-item { border-radius: var(--radius); overflow: hidden; position: relative; cursor: pointer; aspect-ratio: 1/1; }
+.gallery-item:nth-child(1) { grid-column: span 5; }
+.gallery-item:nth-child(2) { grid-column: span 4; }
+.gallery-item:nth-child(3) { grid-column: span 3; }
+.gallery-item:nth-child(4) { grid-column: span 4; }
+.gallery-item:nth-child(5) { grid-column: span 3; }
+.gallery-item:nth-child(6) { grid-column: span 4; }
+
+.gallery-img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform 0.5s ease; }
+.gallery-item:hover .gallery-img { transform: scale(1.04); }
+.gallery-item:nth-child(1) .gallery-placeholder { background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); }
+.gallery-item:nth-child(2) .gallery-placeholder { background: linear-gradient(135deg, #C9A96E 0%, #B8934A 100%); }
+.gallery-item:nth-child(3) .gallery-placeholder { background: linear-gradient(135deg, #E8E4DF 0%, #D1CBC4 100%); }
+.gallery-item:nth-child(4) .gallery-placeholder { background: linear-gradient(135deg, #D4BC8E 0%, #C9A96E 100%); }
+.gallery-item:nth-child(5) .gallery-placeholder { background: linear-gradient(135deg, #333 0%, #555 100%); }
+.gallery-item:nth-child(6) .gallery-placeholder { background: linear-gradient(135deg, #F0E8D8 0%, #E8E4DF 100%); }
+
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0);
+  transition: background 0.35s ease;
+  display: flex; align-items: flex-end; padding: 20px;
+}
+.gallery-item:hover .gallery-overlay { background: rgba(0,0,0,0.35); }
+.gallery-label {
+  font-family: var(--font-h); font-size: 20px; font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  opacity: 0; transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.gallery-item:hover .gallery-label { opacity: 1; transform: translateY(0); }
+.gallery-ph-text {
+  font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+  font-weight: 500; color: rgba(255,255,255,0.4);
+}
+.gallery-item:nth-child(3) .gallery-ph-text,
+.gallery-item:nth-child(6) .gallery-ph-text { color: rgba(0,0,0,0.35); }
+
+/* ============================
+   FEATURES
+   ============================ */
+#features { padding: 120px 0; background: var(--white); }
+.features-inner { text-align: center; margin-bottom: 60px; }
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.feature-card {
+  padding: 48px 32px; border: 1px solid var(--warm-gray);
+  border-top: 3px solid var(--gold);
+  border-radius: var(--radius);
+  text-align: center; transition: var(--t); background: var(--white);
+}
+.feature-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--gold); border-top-color: var(--gold-deep); }
+.feature-icon-wrap {
+  width: 64px; height: 64px; margin: 0 auto 22px;
+  border: 1px solid var(--gold-light);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); background: var(--gold-pale); border-radius: 2px;
+}
+.feature-card h3 {
+  font-family: var(--font-h); font-size: 26px; font-weight: 500;
+  color: var(--black); margin-bottom: 12px;
+}
+.feature-card p { font-size: 13px; color: var(--mid-gray); line-height: 1.8; font-weight: 300; }
+
+/* ============================
+   HOURS & LOCATION
+   ============================ */
+#location { padding: 120px 0; background: var(--off-white); border-top: 1px solid var(--warm-gray); }
+.location-grid {
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: start;
+}
+.location-info .section-title { margin-bottom: 44px; }
+.hours-table { margin-bottom: 44px; }
+.hours-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 0; border-bottom: 1px solid var(--warm-gray);
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-day { font-size: 13px; font-weight: 500; letter-spacing: 0.5px; color: var(--black); }
+.hours-time { font-size: 13px; color: var(--mid-gray); }
+
+.contact-items { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+.contact-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  font-size: 14px; color: var(--dark);
+}
+.contact-item svg { flex-shrink: 0; color: var(--gold); width: 18px; height: 18px; margin-top: 2px; }
+.contact-item a { color: var(--dark); transition: color 0.25s; }
+.contact-item a:hover { color: var(--gold-deep); }
+
+.directions-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold-deep);
+  border-bottom: 1px solid rgba(197,160,40,0.3); padding-bottom: 2px;
+  transition: var(--t);
+}
+.directions-link:hover { color: var(--black); border-color: var(--black); }
+
+.map-container {
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow-lg); height: 460px;
+  border: 1px solid var(--warm-gray);
+}
+.map-container iframe { width: 100%; height: 100%; border: none; display: block; }
+
+/* ============================
+   FOOTER
+   ============================ */
+footer { background: var(--black); padding: 80px 0 40px; }
+.footer-top {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 56px;
+  padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 40px;
+}
+.footer-logo-img { height: 90px; width: auto; display: block; margin-bottom: 14px; }
+.footer-brand p {
+  font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.85;
+  font-weight: 300; max-width: 270px; margin-bottom: 24px;
+}
+.social-links { display: flex; gap: 10px; margin-bottom: 28px; }
+.social-link {
+  width: 36px; height: 36px; border-radius: 2px;
+  border: 1px solid rgba(212,175,55,0.25);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.4); transition: var(--t);
+}
+.social-link:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
+.footer-book-btn {
+  display: inline-block;
+  padding: 13px 30px; background: var(--gold); color: var(--black);
+  border-radius: 2px; font-size: 10px; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase; transition: var(--t);
+}
+.footer-book-btn:hover { background: var(--gold-deep); color: var(--white); transform: translateY(-2px); }
+
+.footer-col h4 {
+  font-family: var(--font-b); font-size: 10px; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 22px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul li a {
+  font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 300; transition: color 0.25s;
+}
+.footer-col ul li a:hover { color: var(--white); }
+.footer-contact-list { display: flex; flex-direction: column; gap: 12px; }
+.footer-contact-item { font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 300; line-height: 1.65; }
+.footer-contact-item a { color: rgba(255,255,255,0.45); transition: color 0.25s; }
+.footer-contact-item a:hover { color: var(--gold); }
+
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px;
+}
+.footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.2); font-weight: 300; }
+
+/* ============================
+   FLOATING BOOK BUTTON
+   ============================ */
+.floating-book {
+  position: fixed; bottom: 28px; right: 28px; z-index: 990;
+  background: var(--gold); color: var(--black);
+  padding: 14px 24px; border-radius: 2px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  box-shadow: 0 8px 28px rgba(197,160,40,0.45);
+  display: none; align-items: center; gap: 8px; transition: var(--t);
+  animation: floatPulse 3s ease-in-out infinite;
+}
+.floating-book:hover {
+  background: var(--black); color: var(--gold);
+  animation: none; transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.3);
+}
+@keyframes floatPulse {
+  0%, 100% { box-shadow: 0 8px 28px rgba(197,160,40,0.45); }
+  50% { box-shadow: 0 8px 36px rgba(197,160,40,0.7), 0 0 0 7px rgba(197,160,40,0.08); }
+}
+@media (max-width: 768px) { .floating-book { display: flex; } }
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 1024px) {
+  .services-layout { grid-template-columns: 1fr; }
+  .services-photo-col { position: static; }
+  .services-photo-placeholder { min-height: 260px; order: -1; }
+  .location-grid { grid-template-columns: 1fr; gap: 48px; }
+  .map-container { height: 380px; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-item:nth-child(1) { grid-column: span 7; }
+  .gallery-item:nth-child(2) { grid-column: span 5; }
+  .gallery-item:nth-child(3), .gallery-item:nth-child(4),
+  .gallery-item:nth-child(5), .gallery-item:nth-child(6) { grid-column: span 6; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .intro-features { grid-template-columns: 1fr; }
+  .intro-feature { border-right: none; border-bottom: 1px solid var(--warm-gray); padding: 24px 16px; }
+  .intro-feature:last-child { border-bottom: none; }
+  .features-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 36px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-item:nth-child(n) { grid-column: span 1; }
+  .gallery-item:nth-child(1) { grid-column: span 2; }
+  .drinks-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-card { flex-direction: column; }
+  .service-card-right { flex-direction: row; align-items: center; justify-content: space-between; width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .hero-logo { height: 180px; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .review-card { flex: 0 0 280px; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item:nth-child(n) { grid-column: span 1; }
+  .drinks-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================
+   GOLD SHIMMER
+   ============================ */
+.section-tag { text-shadow: 0 0 10px rgba(212,175,55,0.3); }
+.service-price { text-shadow: 0 0 10px rgba(212,175,55,0.3); }
+.review-author { text-shadow: 0 0 10px rgba(212,175,55,0.3); }
+.rating-stars { text-shadow: 0 0 10px rgba(212,175,55,0.4); }
+.review-stars { text-shadow: 0 0 10px rgba(212,175,55,0.4); }
+.hero-badge .stars { text-shadow: 0 0 12px rgba(212,175,55,0.5); }
+.service-card { box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 0 0 0 rgba(212,175,55,0); }
+.service-card:hover { box-shadow: var(--shadow-sm), 0 0 8px rgba(212,175,55,0.15); }
+.feature-card:hover { box-shadow: var(--shadow-md), 0 0 12px rgba(212,175,55,0.12); }
+.feature-icon-wrap { box-shadow: 0 0 8px rgba(212,175,55,0.15); }
+.rating-badge { box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 0 16px rgba(212,175,55,0.12); }
+.review-card:hover { box-shadow: 0 0 20px rgba(212,175,55,0.1); }
+
+/* ============================
+   HERO LOGO
+   ============================ */
+.hero-logo { height: 280px; width: auto; display: block; margin: 0 auto 30px; }
+
+/* ============================
+   SERVICES PHOTO IMG
+   ============================ */
+.services-photo-img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius);
+  border: 1px solid var(--gold-light);
+  box-shadow: var(--shadow-sm), 0 0 12px rgba(212,175,55,0.1);
+  display: block;
+  min-height: 480px;
+  max-height: 700px;
+}
+@media (max-width: 1024px) {
+  .services-photo-img { min-height: 260px; max-height: 360px; order: -1; }
+}
+
+/* ============================
+   LANGUAGE OVERLAY
+   ============================ */
+.lang-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.88);
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: opacity 0.5s ease;
+}
+.lang-overlay.hidden { opacity: 0; pointer-events: none; visibility: hidden; }
+.lang-card {
+  background: var(--white);
+  border: 1px solid var(--gold-light);
+  box-shadow: 0 0 60px rgba(212,175,55,0.25), var(--shadow-lg);
+  border-radius: var(--radius);
+  padding: 52px 48px 44px;
+  text-align: center;
+  max-width: 420px; width: 90%;
+  display: flex; flex-direction: column; align-items: center; gap: 18px;
+}
+.lang-logo { height: 200px; width: auto; display: block; }
+.lang-welcome {
+  font-size: 13px; color: var(--mid-gray); font-weight: 300;
+  letter-spacing: 0.5px; line-height: 1.6;
+}
+.lang-title {
+  font-family: var(--font-h); font-size: 30px; font-weight: 400; color: var(--black);
+}
+.lang-divider { width: 40px; height: 1px; background: var(--gold); margin: -4px auto; }
+.lang-buttons { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 4px; }
+.lang-btn {
+  width: 100%; padding: 14px 24px;
+  background: var(--white); color: var(--black);
+  border: 1px solid var(--gold-light);
+  border-radius: 2px;
+  font-family: var(--font-b); font-size: 14px; font-weight: 500;
+  letter-spacing: 0.5px; cursor: pointer; transition: var(--t);
+}
+.lang-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--black); box-shadow: 0 0 12px rgba(212,175,55,0.3); }
+
+/* NAV LANG SWITCHER */
+.lang-switch-btn {
+  background: none; border: none; cursor: pointer;
+  font-size: 18px; line-height: 1; padding: 3px 6px;
+  border-radius: 2px; transition: transform 0.2s ease;
+  display: flex; align-items: center;
+}
+.lang-switch-btn:hover { transform: scale(1.25); }
+</style>
+</head>
+<body>
+
+<!-- ===== LANGUAGE OVERLAY ===== -->
+<div id="langOverlay" class="lang-overlay">
+  <div class="lang-card">
+    <img src="images/logo.png" alt="Ventana Nails &amp; Spa" class="lang-logo">
+    <p class="lang-welcome">Welcome &nbsp;|&nbsp; Bienvenidos &nbsp;|&nbsp; Chào Mừng</p>
+    <h2 class="lang-title">Select Your Language</h2>
+    <div class="lang-divider"></div>
+    <div class="lang-buttons">
+      <button class="lang-btn" data-lang="en" data-flag="🇺🇸">🇺🇸 &nbsp; English</button>
+      <button class="lang-btn" data-lang="es" data-flag="🇪🇸">🇪🇸 &nbsp; Español</button>
+      <button class="lang-btn" data-lang="vi" data-flag="🇻🇳">🇻🇳 &nbsp; Tiếng Việt</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo"><img src="images/logo.png" alt="Ventana Nails &amp; Spa" class="nav-logo-img"></a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="https://booking.gocheckin.net/v2/multiple-staff/18329" target="_blank" rel="noopener" class="nav-book-btn">Book Now</a></li>
+      </ul>
+      <button class="lang-switch-btn" id="langSwitchBtn" title="Change Language">🇺🇸</button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" class="mobile-nav-link">Services</a>
+  <a href="#reviews" class="mobile-nav-link">Reviews</a>
+  <a href="#gallery" class="mobile-nav-link">Gallery</a>
+  <a href="#location" class="mobile-nav-link">Location</a>
+  <a href="https://booking.gocheckin.net/v2/multiple-staff/18329" target="_blank" rel="noopener" class="mobile-book">Book Now</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-in">
+      <span class="stars">★★★★★</span>
+      <span>4.8 Stars &nbsp;·&nbsp; 667+ Google Reviews</span>
+    </div>
+    <img src="images/logo.png" alt="Ventana Nails &amp; Spa" class="hero-logo fade-up stagger-1">
+    <div class="hero-divider fade-in stagger-2"></div>
+    <p class="hero-subtitle fade-up stagger-2">Richmond's premier destination for luxury nail care, relaxation, and rejuvenation</p>
+    <div class="hero-buttons fade-up stagger-3">
+      <a href="https://booking.gocheckin.net/v2/multiple-staff/18329" target="_blank" rel="noopener" class="btn-gold">Book Your Visit</a>
+      <a href="#services" class="btn-outline-white">Explore Services</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ===== INTRO STRIP ===== -->
+<section id="intro">
+  <div class="container">
+    <div class="intro-features">
+      <div class="intro-feature fade-up stagger-1">
+        <svg class="intro-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M24 4l5.09 10.31L41 15.82l-8.5 8.28 2 11.68L24 30l-10.5 5.78 2-11.68L7 15.82l11.91-1.51z"/>
+        </svg>
+        <h3>667+ Five Star Reviews</h3>
+        <p>Trusted by our Richmond community</p>
+      </div>
+      <div class="intro-feature fade-up stagger-2">
+        <svg class="intro-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 8h20l3 8H11l3-8z"/><path d="M11 16s0 20 13 24c13-4 13-24 13-24"/>
+        </svg>
+        <h3>Complimentary Drinks</h3>
+        <p>30+ drink options, served with every visit</p>
+      </div>
+      <div class="intro-feature fade-up stagger-3">
+        <svg class="intro-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="24" r="18"/><path d="M17 24l5 5 9-9"/>
+        </svg>
+        <h3>Premium Sanitization</h3>
+        <p>Medical-grade sterilization, every time</p>
+      </div>
+    </div>
+    <div class="intro-welcome fade-up">
+      <span class="section-tag" style="text-align:center;display:block;">Welcome to Ventana</span>
+      <p>Where beauty meets relaxation. Our talented team delivers exceptional nail care in a warm, inviting atmosphere. From classic manicures to luxurious spa pedicures, every visit is designed to leave you feeling pampered, refreshed, and beautiful.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="container">
+    <div class="services-header fade-up">
+      <span class="section-tag">What We Offer</span>
+      <h2 class="section-title">Our <em>Services</em></h2>
+    </div>
+    <div class="services-header fade-up stagger-1">
+      <div class="service-tabs">
+        <button class="tab-btn active" data-tab="manicures">Manicures</button>
+        <button class="tab-btn" data-tab="pedicures">Pedicures</button>
+        <button class="tab-btn" data-tab="nails">Nails</button>
+        <button class="tab-btn" data-tab="waxing">Waxing</button>
+        <button class="tab-btn" data-tab="drinks">Drinks Menu</button>
+      </div>
+    </div>
+    <div id="services-layout-wrap" class="fade-up stagger-2"></div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews">
+  <div class="container">
+    <div class="reviews-header fade-up">
+      <span class="section-tag">Client Love</span>
+      <h2 class="section-title">What Our <em>Clients Say</em></h2>
+      <span class="gold-line" style="background:linear-gradient(to right,transparent,var(--gold),transparent);margin:20px auto 0;"></span>
+    </div>
+    <div class="fade-up stagger-1" style="display:flex;justify-content:center;margin-top:40px;">
+      <div class="rating-badge">
+        <div class="rating-number">4.8</div>
+        <div class="rating-right">
+          <div class="rating-stars">★★★★★</div>
+          <div class="rating-count">667+ Google Reviews</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-track-wrapper fade-up stagger-2">
+      <div class="reviews-track" id="reviewsTrack">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">I love everything about this place — the staff, the service, and the environment. Always a wonderful experience!</p>
+          <div class="review-author">Maria G.</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Got my honey &amp; milk pedicure done and will come back for a full set next week. Absolutely loved it!</p>
+          <div class="review-author">Jessica T.</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">They offer free drinks that are delicious and served in cute glasses. The whole vibe is amazing!</p>
+          <div class="review-author">Ashley R.</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">This place is absolutely stunning and my overall experience is amazing! Staff is very friendly and management is extremely helpful.</p>
+          <div class="review-author">Rachel R.</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Hellen did my pedicure and she was so sweet and gentle! I am pregnant &amp; she made sure I was comfortable at all times!</p>
+          <div class="review-author">Stephanie M.</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Xuxu did my pedicure and was so gentle and detailed — it was incredibly relaxing. Taylor did my nails and they came out flawless!</p>
+          <div class="review-author">Kimberly D.</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-nav fade-up stagger-3">
+      <button class="reviews-nav-btn" id="reviewsPrev" aria-label="Previous">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="reviews-nav-btn" id="reviewsNext" aria-label="Next">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-header fade-up">
+      <span class="section-tag">Our Portfolio</span>
+      <h2 class="section-title">Our <em>Work</em></h2>
+      <span class="gold-line"></span>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in stagger-1">
+        <img src="images/gallery-1.jpg" alt="Nail Art" class="gallery-img">
+        <div class="gallery-overlay"><span class="gallery-label">Nail Art</span></div>
+      </div>
+      <div class="gallery-item fade-in stagger-2">
+        <img src="images/gallery-2.jpg" alt="Pedicure" class="gallery-img">
+        <div class="gallery-overlay"><span class="gallery-label">Pedicure</span></div>
+      </div>
+      <div class="gallery-item fade-in stagger-3">
+        <img src="images/gallery-3.jpg" alt="Interior" class="gallery-img">
+        <div class="gallery-overlay"><span class="gallery-label">Our Interior</span></div>
+      </div>
+      <div class="gallery-item fade-in stagger-4">
+        <img src="images/gallery-4.jpg" alt="Manicure" class="gallery-img">
+        <div class="gallery-overlay"><span class="gallery-label">Manicure</span></div>
+      </div>
+      <div class="gallery-item fade-in stagger-5">
+        <img src="images/gallery-5.jpg" alt="Spa Experience" class="gallery-img">
+        <div class="gallery-overlay"><span class="gallery-label">Spa Experience</span></div>
+      </div>
+      <div class="gallery-item fade-in stagger-6">
+        <img src="images/gallery-6.jpg" alt="Nail Design" class="gallery-img">
+        <div class="gallery-overlay"><span class="gallery-label">Nail Design</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section id="features">
+  <div class="container">
+    <div class="features-inner fade-up">
+      <span class="section-tag">Why Choose Us</span>
+      <h2 class="section-title">The Ventana <em>Difference</em></h2>
+      <span class="gold-line"></span>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-up stagger-1">
+        <div class="feature-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 8h20l3 8H11l3-8z"/><path d="M11 16s0 20 13 24c13-4 13-24 13-24"/>
+          </svg>
+        </div>
+        <h3>Complimentary Beverages</h3>
+        <p>Enjoy wine, iced coffee, and 30+ refreshing drink options on us — because true luxury is in every detail.</p>
+      </div>
+      <div class="feature-card fade-up stagger-2">
+        <div class="feature-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="18"/><path d="M17 24l5 5 9-9"/>
+          </svg>
+        </div>
+        <h3>Medical-Grade Sanitization</h3>
+        <p>All implements sterilized after each use. Disposable buffers and files. Liner protection on every pedicure chair.</p>
+      </div>
+      <div class="feature-card fade-up stagger-3">
+        <div class="feature-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="8" width="32" height="32" rx="3"/><path d="M16 24h16M24 16v16"/>
+          </svg>
+        </div>
+        <h3>Luxurious Atmosphere</h3>
+        <p>A beautiful modern interior designed entirely for your comfort, relaxation, and indulgence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOURS & LOCATION ===== -->
+<section id="location">
+  <div class="container">
+    <div class="location-grid">
+      <div class="location-info fade-up">
+        <span class="section-tag">Visit Us</span>
+        <h2 class="section-title">Hours &amp; <em>Location</em></h2>
+        <div class="hours-table">
+          <div class="hours-row">
+            <span class="hours-day">Monday – Friday</span>
+            <span class="hours-time">9:30 AM – 7:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Saturday</span>
+            <span class="hours-time">9:00 AM – 7:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Sunday</span>
+            <span class="hours-time">11:00 AM – 5:30 PM</span>
+          </div>
+        </div>
+        <div class="contact-items">
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+18324226979">(832) 422-6979</a>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>9711 Mason Rd Ste 120, Richmond, TX 77407</span>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=9711+Mason+Rd+Ste+120+Richmond+TX+77407" target="_blank" rel="noopener" class="directions-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          Get Directions
+        </a>
+      </div>
+      <div class="map-container fade-in stagger-2">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.8!2d-95.7505!3d29.6397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640dc4e2e7d4f4f%3A0x0!2s9711%20Mason%20Rd%20Ste%20120%2C%20Richmond%2C%20TX%2077407!5e0!3m2!1sen!2sus!4v1699999999999"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Ventana Nails & Spa Richmond location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Ventana Nails &amp; Spa" class="footer-logo-img">
+        <p>Richmond's premier destination for luxury nail care and relaxation. Visit us on Mason Road.</p>
+        <div class="social-links">
+          <a href="https://instagram.com/ventananailssparichmond" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://facebook.com/VentanaNailsSpaRichmond" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+        </div>
+        <a href="https://booking.gocheckin.net/v2/multiple-staff/18329" target="_blank" rel="noopener" class="footer-book-btn">Book Your Appointment</a>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#features">Why Us</a></li>
+          <li><a href="#location">Location</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-list">
+          <div class="footer-contact-item"><a href="tel:+18324226979">(832) 422-6979</a></div>
+          <div class="footer-contact-item">9711 Mason Rd Ste 120<br>Richmond, TX 77407</div>
+          <div class="footer-contact-item">Mon–Fri: 9:30 AM – 7 PM<br>Sat: 9 AM – 7 PM<br>Sun: 11 AM – 5:30 PM</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Ventana Nails & Spa Richmond. All rights reserved.</p>
+      <p>Richmond, TX 77407</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING BOOK ===== -->
+<a href="https://booking.gocheckin.net/v2/multiple-staff/18329" target="_blank" rel="noopener" class="floating-book" id="floatingBook">
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+  Book Now
+</a>
+
+<script>
+(function () {
+  'use strict';
+
+  const BOOKING = 'https://booking.gocheckin.net/v2/multiple-staff/18329';
+
+  /* ─── SERVICES DATA ─── */
+  const data = {
+    manicures: {
+      photo: 'Manicure',
+      items: [
+        { name: 'Basic Manicure', price: '$20',
+          desc: 'Nail trimming, cuticle cleaning, lotion, hot towel, and regular polish. +$20 gel upgrade.',
+          full: 'Nail trimming, cuticle cleaning, lotion, hot towel, and regular polish. *Upgrade your nails with gel polish (shellac) for $20.' },
+        { name: 'Signature Manicure', price: '$40',
+          desc: 'Cuticle care, lotion massage, paraffin wax, 7-min neck massage, warm towel & tealight candle wax massage. +$20 gel upgrade.',
+          full: 'Nail trimming, cuticle care, lotion massage, paraffin wax, and regular polish. Includes a 7-minute neck massage, warm towel, and soothing tealight candle wax massage to ease tension and promote relaxation. *Upgrade your nails with gel polish (shellac) for $20.' },
+        { name: 'Deluxe Manicure', price: '$50',
+          desc: 'Enhanced Signature with exfoliation, arm steamer & 10-min tealight candle wax massage, paraffin wax. +$20 gel upgrade.',
+          full: 'Enhanced version of the Signature Manicure. Includes nail trimming, cuticle care, exfoliation, hydrating lotion, paraffin wax, hot towel wrap, and your choice of regular polish. A soothing arm steamer opens the pores for better hydration, followed by a deeply relaxing 10-minute massage using warm tealight candle wax, which delivers gentle heat and aromatherapy to relieve tension and leave your skin soft and revitalized. *Upgrade your nails with gel polish (shellac) for $20.' },
+      ]
+    },
+    pedicures: {
+      photo: 'Pedicure',
+      items: [
+        { name: 'Classic Pedicure', price: '$35',
+          desc: '6-min massage, salt exfoliation, lotion, hot towel. All pedicures include soaking, trimming & cuticle care. +$20 gel upgrade.',
+          full: '6-minute massage. Salt exfoliation massage, nail trimming, cuticle cleaning, lotion, and hot towel. All pedicures include soaking, trimming, cuticle care, and regular polish. Upgrade to gel polish for +$20.' },
+        { name: 'Sugar Pedicure', price: '$40',
+          desc: '8-min massage, sugar scrub, hot stone or lotion massage. Scents: Lavender, Tropical. +$20 gel.',
+          full: '8-minute massage. Sugar scrub exfoliation, hot stone or lotion massage, hot towel wrap. Scent options: Lavender, Tropical. All pedicures include soaking, trimming, cuticle care, and regular polish. Upgrade to gel polish for +$20.' },
+        { name: 'Sugar & Mask Pedicure', price: '$50',
+          desc: '14-min massage, sugar exfoliation, mask, two hot towels, hot stone or paraffin wax. Scents: Orange, Cucumber Dream. +$20 gel.',
+          full: '14-minute massage. Sugar exfoliation massage, mask to smoothen skin, two hot towels, hot stone massage or paraffin wax. Scent options: Orange, Cucumber Dream. All pedicures include soaking, trimming, cuticle care, and regular polish. Upgrade to gel polish for +$20.' },
+        { name: 'Deluxe Pedicure', price: '$60',
+          desc: '18-min massage, sugar exfoliation, mask, hot stone massage, paraffin wax. Scents: Rose, Milk & Honey. +$20 gel.',
+          full: '18-minute massage. Sugar exfoliation massage, mask, two hot towels, lotion massage, intensive hot stone massage, and paraffin wax. Scent options: Rose, Milk & Honey. All pedicures include soaking, trimming, cuticle care, and regular polish. Upgrade to gel polish for +$20.' },
+        { name: 'Volcano Spa Eruption', price: '$70',
+          desc: '25-min massage, 8-step detox with signature bubbling Volcano Eruption soak. Scents: Honey Suckle, Tropical Citrus. +$20 gel.',
+          full: '25-minute massage. An 8-step luxurious treatment designed to detoxify, exfoliate, and deeply hydrate your feet. Features the signature "Volcano Eruption" bubbling soak that revitalizes tired skin and melts away stress, leaving feet soft, smooth, and completely refreshed. 8 steps: Detox Volcano Crystals, Detox Volcano Activator, Exfoliating Sugar Scrub, Steamer, Collagen Organic Cream Mask, Collagen Organic Massage Lotion, Tealight Candle & Hot Stone Massage, Paraffin Hot Wax. Scent options: Honey Suckle, Tropical Citrus. Upgrade to gel polish for +$20.' },
+        { name: 'Collagen Spa Pedicure', price: '$80',
+          desc: '30-min massage, 9-step collagen-infused treatment for deep hydration. Scents: Crystal Waters, Spearmint. +$20 gel.',
+          full: '30-minute massage. A luxurious 9-step treatment infused with plant-based collagen, essential oils, and natural extracts to detoxify, exfoliate, deeply hydrate, and rejuvenate tired feet. Perfect for total relaxation, deep nourishment, and long-lasting silky-smooth results. 9 steps: Foot Bath Bomber, Collagen Crystals, Collagen Sugar Cane Scrub, Steamer, Collagen Cream Mask, Collagen Muscle-Relaxing Gel, Collagen Massage Lotion, Tealight Candle and Hot Stone Massage, Paraffin Hot Wax. Scent options: Crystal Waters, Spearmint. Upgrade to gel polish for +$20.' },
+        { name: 'Volcano Luxury Pedicure', price: '$100',
+          desc: '40-min massage, 10-step CBD-infused premium treatment. Scents: Rose Gold, Fuji Pearl. +$20 gel.',
+          full: '40-minute massage. A sophisticated 10-step upgrade featuring premium CBD-infused ingredients and a spectacular bubbling "Volcano Eruption" soak that detoxifies, softens, and refreshes skin while filling the room with a calming fragrance. Ideal for total relaxation, rejuvenation, and the soothing benefits of CBD-enhanced care. 10 steps: Foot Bath Bomber, CBD Detox Volcano Crystals, CBD Detox Volcano Activator, CBD Exfoliating Sugar Scrub, Steamer, CBD Collagen Cream Mask, CBD Collagen Massage Lotion, Tealight Candle and Hot Stone Massage, Paraffin Hot Wax. Scent options: Rose Gold, Fuji Pearl. Upgrade to gel polish for +$20.' },
+        { name: 'Ventana Herbal Pedicure', price: '$120',
+          desc: '50-min massage, 9-step botanical herbal escape with Dead Sea minerals. Scents: Eucalyptus, Lavender, Lemongrass, Rose, Tea Tree. +$20 gel.',
+          full: '50-minute massage. A refreshing botanical escape rich in herbs and natural ingredients to rejuvenate body, mind, and spirit. Pampers feet with nourishing herbal salts, gels, lotions, and masks combined with warm towels, hot stone massage, and paraffin wax for ultimate hydration and relaxation. Recommended for tired, dry, or sensitive feet. 9 steps: Foot Bath Bomber, Dead Sea Mineral Salt Soak, Steamer, Herbal Gel Application, Herbal Oil Massage, Herbal Lotion Massage, Herbal Mask, Tealight Candle and Hot Stone Massage, Paraffin Hot Wax. Scent options: Eucalyptus, Lavender, Lemongrass, Rose, Tea Tree. Upgrade to gel polish for +$20.' },
+      ]
+    },
+    nails: {
+      photo: 'Nails',
+      items: [
+        { name: 'Acrylic Full Set', price: '$55',
+          desc: 'Beautiful, durable acrylic enhancements shaped to your preference.',
+          full: 'Professional acrylic nail enhancement for a durable, long-lasting full set.' },
+        { name: 'Acrylic Fill In', price: '$47',
+          desc: 'Maintain and refresh your existing acrylic set.',
+          full: 'Maintenance fill for existing acrylic nails.' },
+        { name: 'Full Set Liqui', price: '$60',
+          desc: 'Liquid acrylic full set for a smooth, natural-looking finish.',
+          full: 'Full set using liquid gel for a smooth, natural-looking finish.' },
+        { name: 'Color Powder Full Set', price: '$50',
+          desc: 'Vibrant color powder applied as a full set enhancement.',
+          full: 'Full set using colored acrylic powder for vibrant, chip-resistant color.' },
+        { name: 'Pink & White / Ombre', price: '$60',
+          desc: 'Classic French or dreamy ombre fade — timeless elegance.',
+          full: 'Classic French or trendy ombre gradient nail design.' },
+        { name: 'Fill In Liqui', price: '$50',
+          desc: 'Liquid acrylic fill-in to maintain your current set.',
+          full: 'Maintenance fill for existing liquid gel nails.' },
+        { name: 'Color Powder Refill (same)', price: '$40',
+          desc: 'Color powder refill — same color as your existing set.',
+          full: 'Refill using the same color powder as your previous set.' },
+        { name: 'Color Powder Refill (change)', price: '$45',
+          desc: 'Color powder refill — switch to a new color.',
+          full: 'Refill with a new color powder of your choice.' },
+        { name: 'Dip + Cuticle & Massage', price: '$50',
+          desc: 'Long-lasting dip powder with cuticle grooming and relaxing hand massage.',
+          full: 'Dip powder application with cuticle grooming and a relaxing hand massage.' },
+        { name: 'Hybrid Gel', price: '$65',
+          desc: 'Combines acrylic strength with gel flexibility. Odorless, monomer-free, chip-free finish lasting 2–4 weeks.',
+          full: 'The best of both worlds. Combines the strength and durability of acrylic with the lightweight flexibility of gel polish. Applied in layers and cured under LED/UV lamp. Odorless, monomer-free, chip-free finish that lasts 2–4 weeks. Stronger than traditional gel, lighter than acrylic, and less damaging to the natural nail.' },
+        { name: 'Gel Manicure', price: '$40',
+          desc: 'Chip-resistant gel polish with a lasting high-shine finish.',
+          full: 'Gel polish application for a glossy, chip-free finish lasting 2+ weeks.' },
+        { name: 'Gel Color Only', price: '$30',
+          desc: 'Gel color application on existing nails — no shaping.',
+          full: 'Gel polish color application only, no manicure service included.' },
+        { name: 'Toe or Finger Color Change', price: '$15',
+          desc: 'Quick color swap on toes or fingernails.',
+          full: 'Quick polish color change for toes or fingernails.' },
+        { name: 'Nail Removal Only', price: '$15',
+          desc: 'Safe, gentle removal of acrylic, gel, or dip.',
+          full: 'Safe removal of existing acrylic, gel, or dip powder nails.' },
+        { name: 'Nail Removal with Service', price: '$7',
+          desc: 'Removal when combined with a new service.',
+          full: 'Nail removal included when booking another nail service.' },
+        { name: 'Paraffin', price: '$8',
+          desc: 'Warm paraffin wax treatment for ultra-soft hands or feet.',
+          full: 'Warm paraffin wax treatment for deep moisture and soft skin.' },
+        { name: 'Design', price: '$5+',
+          desc: 'Nail art and custom designs — ask your tech for options.',
+          full: 'Custom nail art and designs. Price varies by complexity.' },
+        { name: 'Shape', price: '$5',
+          desc: 'Custom nail shaping — square, almond, coffin, stiletto & more.',
+          full: 'Nail reshaping service to your preferred style.' },
+        { name: 'French or Color Tip', price: '$5',
+          desc: 'Classic French tips or custom color tip upgrade.',
+          full: 'Classic French tip or colored tip accent.' },
+        { name: 'Length', price: '$5+',
+          desc: 'Additional length added to any nail service.',
+          full: 'Extra charge for additional nail length. Price varies.' },
+        { name: 'Add Gel Color to Service', price: '$20',
+          desc: 'Upgrade any service with long-lasting gel color.',
+          full: 'Upgrade any service with gel polish for a long-lasting finish.' },
+        { name: 'Extra Massage', price: '$1/min',
+          desc: 'Extend your relaxation with additional massage time.',
+          full: 'Additional massage time at $1 per minute.' },
+      ]
+    },
+    waxing: {
+      photo: 'Waxing',
+      items: [
+        { name: 'Eyebrows', price: '$12',
+          desc: 'Perfectly shaped brows with precise, gentle waxing.',
+          full: 'Professional eyebrow shaping and hair removal.' },
+        { name: 'Chin or Lip', price: '$10',
+          desc: 'Quick and clean waxing for smooth, hair-free skin.',
+          full: 'Gentle facial hair removal for chin or upper lip area.' },
+        { name: 'Full Arm', price: '$45',
+          desc: 'Smooth, hair-free arms — wrist to shoulder.',
+          full: 'Complete hair removal for both arms, wrist to shoulder.' },
+        { name: 'Half Arm', price: '$35',
+          desc: 'Waxing from wrist to elbow for quick refreshing results.',
+          full: 'Hair removal for lower or upper arm section.' },
+        { name: 'Full Leg', price: '$55',
+          desc: 'Complete leg waxing from ankle to upper thigh.',
+          full: 'Complete hair removal for both legs, ankle to upper thigh.' },
+        { name: 'Half Leg', price: '$35',
+          desc: 'Waxing from ankle to knee — perfect for seasonal upkeep.',
+          full: 'Hair removal for lower or upper leg section.' },
+        { name: 'Under Arms', price: '$25',
+          desc: 'Gentle underarm waxing for long-lasting smoothness.',
+          full: 'Quick and clean underarm hair removal.' },
+        { name: 'Back', price: '$45',
+          desc: 'Full back waxing for clean, confident skin.',
+          full: 'Full back hair removal for smooth, clean results.' },
+        { name: 'Whole Face', price: '$40',
+          desc: 'Complete facial waxing for smooth, hair-free skin everywhere.',
+          full: 'Complete facial hair removal including forehead, cheeks, chin, upper lip, and sideburns.' },
+      ]
+    }
+  };
+
+  /* ─── RENDER SERVICES ─── */
+  function renderServices(tab) {
+    const wrap = document.getElementById('services-layout-wrap');
+
+    if (tab === 'drinks') {
+      const drinks = Array.from({ length: 32 }, (_, i) => `
+        <div class="drink-card">
+          <img src="images/drink-${i + 1}.jpg" alt="Drink ${i + 1}" class="drink-img">
+        </div>
+      `).join('');
+
+      wrap.innerHTML = `
+        <div class="drinks-header">
+          <h3>Complimentary Drinks Menu</h3>
+          <p>Enjoy a refreshing beverage on us during your visit — 32 drink options available!</p>
+        </div>
+        <div class="drinks-grid">${drinks}</div>
+        <div class="drinks-note">All drinks are complimentary with any service</div>
+      `;
+      return;
+    }
+
+    const cat = data[tab];
+    const cards = cat.items.map(s => `
+      <div class="service-card">
+        <div class="service-card-left">
+          <div class="service-card-name">${s.name}</div>
+          <div class="service-card-desc">
+            <span class="desc-preview">${s.desc}</span>
+            <div class="desc-full">${s.full}</div>
+            <button class="desc-toggle" aria-expanded="false">See Details ▼</button>
+          </div>
+        </div>
+        <div class="service-card-right">
+          <div class="service-price">${s.price}</div>
+          <a href="${BOOKING}" target="_blank" rel="noopener" class="service-book-btn">Book</a>
+        </div>
+      </div>
+    `).join('');
+
+    const imgMap = { manicures: 'images/service-manicure.jpg', pedicures: 'images/service-pedicure.jpg', nails: 'images/service-nails.jpg', waxing: 'images/service-waxing.jpg' };
+    wrap.innerHTML = `
+      <div class="services-layout" id="servicesLayout">
+        <div class="services-cards-col">${cards}</div>
+        <div class="services-photo-col">
+          <img src="${imgMap[tab]}" alt="${cat.photo}" class="services-photo-img">
+        </div>
+      </div>
+    `;
+  }
+
+  /* ─── TAB SWITCHING ─── */
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const wrap = document.getElementById('services-layout-wrap');
+      wrap.style.opacity = '0';
+      wrap.style.transform = 'translateY(10px)';
+      wrap.style.transition = 'opacity 0.22s ease, transform 0.22s ease';
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      setTimeout(() => {
+        renderServices(btn.dataset.tab);
+        wrap.style.opacity = '1';
+        wrap.style.transform = 'translateY(0)';
+      }, 220);
+    });
+  });
+  renderServices('manicures');
+
+  /* ─── EXPAND / COLLAPSE DESCRIPTIONS ─── */
+  document.getElementById('services-layout-wrap').addEventListener('click', e => {
+    const btn = e.target.closest('.desc-toggle');
+    if (!btn) return;
+    const full = btn.previousElementSibling;
+    const expanded = full.classList.toggle('expanded');
+    btn.textContent = expanded ? 'Hide Details ▲' : 'See Details ▼';
+    btn.setAttribute('aria-expanded', expanded);
+  });
+
+  /* ─── NAV SCROLL ─── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  /* ─── HAMBURGER ─── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-nav-link, .mobile-book').forEach(l => {
+    l.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ─── INTERSECTION OBSERVER ─── */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  window.addEventListener('load', () => {
+    document.querySelectorAll('#hero .fade-in, #hero .fade-up').forEach(el =>
+      setTimeout(() => el.classList.add('visible'), 150)
+    );
+  });
+  document.querySelectorAll('.fade-up:not(#hero *), .fade-in:not(#hero *)').forEach(el => io.observe(el));
+
+  /* ─── REVIEWS SLIDER ─── */
+  const track = document.getElementById('reviewsTrack');
+  document.getElementById('reviewsPrev').addEventListener('click', () => track.scrollBy({ left: -360, behavior: 'smooth' }));
+  document.getElementById('reviewsNext').addEventListener('click', () => track.scrollBy({ left: 360, behavior: 'smooth' }));
+
+  let drag = false, startX, scrollL;
+  track.addEventListener('mousedown', e => { drag = true; startX = e.pageX - track.offsetLeft; scrollL = track.scrollLeft; });
+  track.addEventListener('mouseleave', () => drag = false);
+  track.addEventListener('mouseup', () => drag = false);
+  track.addEventListener('mousemove', e => {
+    if (!drag) return;
+    e.preventDefault();
+    track.scrollLeft = scrollL - (e.pageX - track.offsetLeft - startX) * 1.5;
+  });
+
+  /* ─── SMOOTH SCROLL ─── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  /* ─── LANGUAGE OVERLAY ─── */
+  const overlay = document.getElementById('langOverlay');
+  const langSwitchBtn = document.getElementById('langSwitchBtn');
+
+  function closeOverlay(lang, flag) {
+    localStorage.setItem('ventana_lang', lang);
+    localStorage.setItem('ventana_flag', flag);
+    overlay.classList.add('hidden');
+    if (langSwitchBtn) langSwitchBtn.textContent = flag;
+    setTimeout(() => { overlay.style.display = 'none'; }, 520);
+  }
+
+  // If already chosen, hide immediately (no transition flash)
+  const savedLang = localStorage.getItem('ventana_lang');
+  const savedFlag = localStorage.getItem('ventana_flag');
+  if (savedLang) {
+    overlay.style.display = 'none';
+    if (langSwitchBtn && savedFlag) langSwitchBtn.textContent = savedFlag;
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => closeOverlay(btn.dataset.lang, btn.dataset.flag));
+  });
+
+  if (langSwitchBtn) {
+    langSwitchBtn.addEventListener('click', () => {
+      overlay.style.display = 'flex';
+      requestAnimationFrame(() => overlay.classList.remove('hidden'));
+    });
+  }
+
+})();
+</script>
+</body>
+</html>
