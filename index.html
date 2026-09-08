@@ -751,6 +751,35 @@ nav.scrolled .hamburger span { background: var(--black); }
    FEATURES
    ============================ */
 #features { padding: 120px 0; background: var(--white); }
+
+/* SALON POLICY */
+#policy { padding: 120px 0; background: var(--off-white, #faf8f5); }
+.policy-head { text-align: center; margin-bottom: 52px; }
+.policy-intro {
+  max-width: 680px; margin: 20px auto 0; font-size: 14px; line-height: 1.9;
+  color: var(--mid-gray); font-weight: 300;
+}
+.policy-list { max-width: 860px; margin: 0 auto; list-style: none; counter-reset: policy; }
+.policy-list li {
+  counter-increment: policy;
+  position: relative; padding: 22px 0 22px 58px;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  font-size: 14px; line-height: 1.85; color: var(--dark); font-weight: 300;
+}
+.policy-list li:last-child { border-bottom: none; }
+.policy-list li::before {
+  content: counter(policy, decimal-leading-zero);
+  position: absolute; left: 0; top: 22px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 20px; font-weight: 600; color: var(--gold-deep);
+  letter-spacing: 0.5px;
+}
+@media (max-width: 768px) {
+  #policy { padding: 80px 0; }
+  .policy-list li { padding: 18px 0 18px 44px; font-size: 13px; }
+  .policy-list li::before { font-size: 17px; top: 18px; }
+}
+
 .features-inner { text-align: center; margin-bottom: 60px; }
 .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .feature-card {
@@ -1044,6 +1073,7 @@ footer { background: var(--black); padding: 80px 0 40px; }
         <li><a href="#services">Services</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#policy">Policy</a></li>
         <li><a href="#location">Location</a></li>
         <li><a href="https://booking.gocheckin.net/v2/multiple-staff/18329" target="_blank" rel="noopener" class="nav-book-btn">Book Now</a></li>
       </ul>
@@ -1059,6 +1089,7 @@ footer { background: var(--black); padding: 80px 0 40px; }
   <a href="#services" class="mobile-nav-link">Services</a>
   <a href="#reviews" class="mobile-nav-link">Reviews</a>
   <a href="#gallery" class="mobile-nav-link">Gallery</a>
+  <a href="#policy" class="mobile-nav-link">Policy</a>
   <a href="#location" class="mobile-nav-link">Location</a>
   <a href="https://booking.gocheckin.net/v2/multiple-staff/18329" target="_blank" rel="noopener" class="mobile-book">Book Now</a>
 </div>
@@ -1133,6 +1164,7 @@ footer { background: var(--black); padding: 80px 0 40px; }
         <button class="tab-btn" data-tab="pedicures">Pedicures</button>
         <button class="tab-btn" data-tab="nails">Nails</button>
         <button class="tab-btn" data-tab="waxing">Waxing</button>
+        <button class="tab-btn" data-tab="eyelash">Eyelash</button>
         <button class="tab-btn" data-tab="drinks">Drinks Menu</button>
       </div>
     </div>
@@ -1279,6 +1311,29 @@ footer { background: var(--black); padding: 80px 0 40px; }
   </div>
 </section>
 
+
+<!-- ===== SALON POLICY ===== -->
+<section id="policy">
+  <div class="container">
+    <div class="policy-head fade-up">
+      <span class="section-tag">Good to Know</span>
+      <h2 class="section-title">Salon <em>Policy</em></h2>
+      <span class="gold-line"></span>
+      <p class="policy-intro">To ensure a pleasant and efficient experience for all clients, our salon has established the following policies. We appreciate your understanding and cooperation.</p>
+    </div>
+    <ol class="policy-list fade-up">
+      <li>We reserve the right to refuse service to anyone.</li>
+      <li>There are no refunds. We will try our best to resolve the issue.</li>
+      <li>Our prices are available and transparent on the menu.</li>
+      <li>Please give us advance notice for canceling any appointments &mdash; at least 3 hours. After 3 cancellations without notice, you will not be able to book an appointment in advance.</li>
+      <li>Health issues or diabetes must be communicated before service.</li>
+      <li>Please notify us immediately, or within 24 hours, if there is any issue relating to your service.</li>
+      <li>There is no guarantee on the regular polish or fill-in/refill services.</li>
+      <li>Please note that our license does not permit us to perform ingrown nail removal procedures. However, we will do our best to help manage the ingrown and provide appropriate care.</li>
+    </ol>
+  </div>
+</section>
+
 <!-- ===== HOURS & LOCATION ===== -->
 <section id="location">
   <div class="container">
@@ -1350,6 +1405,7 @@ footer { background: var(--black); padding: 80px 0 40px; }
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#features">Why Us</a></li>
+          <li><a href="#policy">Policy</a></li>
           <li><a href="#location">Location</a></li>
         </ul>
       </div>
@@ -1388,113 +1444,110 @@ footer { background: var(--black); padding: 80px 0 40px; }
       items: [
         { name: 'Basic Manicure', price: '$20',
           desc: 'Nail trimming, cuticle cleaning, lotion, hot towel, and regular polish. +$20 gel upgrade.',
-          full: 'Nail trimming, cuticle cleaning, lotion, hot towel, and regular polish. *Upgrade your nails with gel polish (shellac) for $20.' },
+          full: 'A nice and simple manicure that includes nail trimming, cuticle cleaning, lotion, hot towel, and regular polish. *Upgrade your nails with gel polish (shellac) for $20.' },
         { name: 'Signature Manicure', price: '$40',
-          desc: 'Cuticle care, lotion massage, paraffin wax, 7-min neck massage, warm towel & tealight candle wax massage. +$20 gel upgrade.',
-          full: 'Nail trimming, cuticle care, lotion massage, paraffin wax, and regular polish. Includes a 7-minute neck massage, warm towel, and soothing tealight candle wax massage to ease tension and promote relaxation. *Upgrade your nails with gel polish (shellac) for $20.' },
+          desc: '7-minute massage. Cuticle care, lotion massage, paraffin wax, neck massage, warm towel &amp; tealight candle wax massage. +$20 gel upgrade.',
+          full: 'Moisturize and revitalize your hands with nail trimming, cuticle care, lotion massage, paraffin wax, and regular polish. Includes a 7-minute neck massage, warm towel, and soothing tealight candle wax massage to ease tension and promote relaxation. *Upgrade your nails with gel polish (shellac) for $20.' },
         { name: 'Deluxe Manicure', price: '$50',
-          desc: 'Enhanced Signature with exfoliation, arm steamer & 10-min tealight candle wax massage, paraffin wax. +$20 gel upgrade.',
-          full: 'Enhanced version of the Signature Manicure. Includes nail trimming, cuticle care, exfoliation, hydrating lotion, paraffin wax, hot towel wrap, and your choice of regular polish. A soothing arm steamer opens the pores for better hydration, followed by a deeply relaxing 10-minute massage using warm tealight candle wax, which delivers gentle heat and aromatherapy to relieve tension and leave your skin soft and revitalized. *Upgrade your nails with gel polish (shellac) for $20.' },
+          desc: '10-minute massage. Enhanced Signature with exfoliation, paraffin wax, hot towel wrap &amp; warm tealight candle wax massage. +$20 gel upgrade.',
+          full: 'An enhanced version of the Signature Manicure: nail trimming, cuticle care, exfoliation, hydrating lotion, paraffin wax, hot towel wrap, and your choice of regular polish. Followed by a 10-minute massage using warm tealight candle wax for gentle heat and aromatherapy. *Upgrade your nails with gel polish (shellac) for $20.' },
       ]
     },
     pedicures: {
       photo: 'Pedicure',
       items: [
-        { name: 'Classic Pedicure', price: '$35',
-          desc: '6-min massage, salt exfoliation, lotion, hot towel. All pedicures include soaking, trimming & cuticle care. +$20 gel upgrade.',
-          full: '6-minute massage. Salt exfoliation massage, nail trimming, cuticle cleaning, lotion, and hot towel. All pedicures include soaking, trimming, cuticle care, and regular polish. Upgrade to gel polish for +$20.' },
-        { name: 'Sugar Pedicure', price: '$40',
-          desc: '8-min massage, sugar scrub, hot stone or lotion massage. Scents: Lavender, Tropical. +$20 gel.',
-          full: '8-minute massage. Sugar scrub exfoliation, hot stone or lotion massage, hot towel wrap. Scent options: Lavender, Tropical. All pedicures include soaking, trimming, cuticle care, and regular polish. Upgrade to gel polish for +$20.' },
-        { name: 'Sugar & Mask Pedicure', price: '$50',
-          desc: '14-min massage, sugar exfoliation, mask, two hot towels, hot stone or paraffin wax. Scents: Orange, Cucumber Dream. +$20 gel.',
-          full: '14-minute massage. Sugar exfoliation massage, mask to smoothen skin, two hot towels, hot stone massage or paraffin wax. Scent options: Orange, Cucumber Dream. All pedicures include soaking, trimming, cuticle care, and regular polish. Upgrade to gel polish for +$20.' },
+        { name: 'Basic Pedicure', price: '$36',
+          desc: '5-minute massage. Trim, shape &amp; buff, cuticle care, callus remover, light scrub, hot towel wrap. +$20 gel upgrade.',
+          full: '5-minute massage. Trim, shape, and buff toenails. Push back and remove excess cuticles. Callus remover solution to soften calluses and relieve cracked heels. Light scrub exfoliation. Massage legs &amp; feet. Hot towel wrap. *Upgrade to gel polish (shellac) for $20.' },
+        { name: 'Sugar Pedicure', price: '$42',
+          desc: '8-minute massage. Sugar scrub exfoliation, hot stone lotion massage, hot towel wrap. Scents: Lavender, Tropical, Mango, Sugar #5. +$20 gel upgrade.',
+          full: '8-minute massage. Sugar scrub exfoliation, hot stone lotion massage, hot towel wrap. Sugar scent options: Lavender, Tropical, Mango, Sugar #5. *Upgrade to gel polish (shellac) for $20.' },
+        { name: 'Sugar and Mask', price: '$50',
+          desc: '12-minute massage. Sugar scrub, skin-softening mask, warm towels, hydrating lotion, hot stone or paraffin wax. Scents: Orange, Cucumber Dream, Lemon, White Pearl. +$20 gel upgrade.',
+          full: '12-minute massage. Sugar scrub massage, skin-softening mask, warm towels, hydrating lotion massage, and your choice of hot stone massage or paraffin wax wrap. Scent options: Orange, Cucumber Dream, Lemon, White Pearl. *Upgrade to gel polish (shellac) for $20.' },
         { name: 'Deluxe Pedicure', price: '$60',
-          desc: '18-min massage, sugar exfoliation, mask, hot stone massage, paraffin wax. Scents: Rose, Milk & Honey. +$20 gel.',
-          full: '18-minute massage. Sugar exfoliation massage, mask, two hot towels, lotion massage, intensive hot stone massage, and paraffin wax. Scent options: Rose, Milk & Honey. All pedicures include soaking, trimming, cuticle care, and regular polish. Upgrade to gel polish for +$20.' },
-        { name: 'Volcano Spa Eruption', price: '$70',
-          desc: '25-min massage, 8-step detox with signature bubbling Volcano Eruption soak. Scents: Honey Suckle, Tropical Citrus. +$20 gel.',
-          full: '25-minute massage. An 8-step luxurious treatment designed to detoxify, exfoliate, and deeply hydrate your feet. Features the signature "Volcano Eruption" bubbling soak that revitalizes tired skin and melts away stress, leaving feet soft, smooth, and completely refreshed. 8 steps: Detox Volcano Crystals, Detox Volcano Activator, Exfoliating Sugar Scrub, Steamer, Collagen Organic Cream Mask, Collagen Organic Massage Lotion, Tealight Candle & Hot Stone Massage, Paraffin Hot Wax. Scent options: Honey Suckle, Tropical Citrus. Upgrade to gel polish for +$20.' },
-        { name: 'Collagen Spa Pedicure', price: '$80',
-          desc: '30-min massage, 9-step collagen-infused treatment for deep hydration. Scents: Crystal Waters, Spearmint. +$20 gel.',
-          full: '30-minute massage. A luxurious 9-step treatment infused with plant-based collagen, essential oils, and natural extracts to detoxify, exfoliate, deeply hydrate, and rejuvenate tired feet. Perfect for total relaxation, deep nourishment, and long-lasting silky-smooth results. 9 steps: Foot Bath Bomber, Collagen Crystals, Collagen Sugar Cane Scrub, Steamer, Collagen Cream Mask, Collagen Muscle-Relaxing Gel, Collagen Massage Lotion, Tealight Candle and Hot Stone Massage, Paraffin Hot Wax. Scent options: Crystal Waters, Spearmint. Upgrade to gel polish for +$20.' },
-        { name: 'Volcano Luxury Pedicure', price: '$100',
-          desc: '40-min massage, 10-step CBD-infused premium treatment. Scents: Rose Gold, Fuji Pearl. +$20 gel.',
-          full: '40-minute massage. A sophisticated 10-step upgrade featuring premium CBD-infused ingredients and a spectacular bubbling "Volcano Eruption" soak that detoxifies, softens, and refreshes skin while filling the room with a calming fragrance. Ideal for total relaxation, rejuvenation, and the soothing benefits of CBD-enhanced care. 10 steps: Foot Bath Bomber, CBD Detox Volcano Crystals, CBD Detox Volcano Activator, CBD Exfoliating Sugar Scrub, Steamer, CBD Collagen Cream Mask, CBD Collagen Massage Lotion, Tealight Candle and Hot Stone Massage, Paraffin Hot Wax. Scent options: Rose Gold, Fuji Pearl. Upgrade to gel polish for +$20.' },
-        { name: 'Ventana Herbal Pedicure', price: '$120',
-          desc: '50-min massage, 9-step botanical herbal escape with Dead Sea minerals. Scents: Eucalyptus, Lavender, Lemongrass, Rose, Tea Tree. +$20 gel.',
-          full: '50-minute massage. A refreshing botanical escape rich in herbs and natural ingredients to rejuvenate body, mind, and spirit. Pampers feet with nourishing herbal salts, gels, lotions, and masks combined with warm towels, hot stone massage, and paraffin wax for ultimate hydration and relaxation. Recommended for tired, dry, or sensitive feet. 9 steps: Foot Bath Bomber, Dead Sea Mineral Salt Soak, Steamer, Herbal Gel Application, Herbal Oil Massage, Herbal Lotion Massage, Herbal Mask, Tealight Candle and Hot Stone Massage, Paraffin Hot Wax. Scent options: Eucalyptus, Lavender, Lemongrass, Rose, Tea Tree. Upgrade to gel polish for +$20.' },
+          desc: '14-minute massage. Double sugar scrub, smoothing mask, steamer, warm towels, hot stone with tealight candle wax, paraffin wax wrap. +$20 gel upgrade.',
+          full: '14-minute massage. Double sugar scrub massage, skin-smoothing mask, steamer, warm towels, hot stone massage with tealight candle wax, hydrating lotion massage, and paraffin wax wrap. Scent options: Rose, Orange, Green Tea, Milk &amp; Honey, Cucumber, Lemongrass. *Upgrade to gel polish (shellac) for $20.' },
+        { name: 'Billionaire Spa', price: '$70',
+          desc: '18-minute massage. Bubble salt soak, sugar scrub, cream mask, massage lotion, steamer, hot stone with tealight candle wax. +$20 gel upgrade.',
+          full: '18-minute massage. Bubble salt soak, sugar scrub, cream mask, massage lotion, steamer, and hot stone massage with tealight candle wax. Scent options: Lavender, Coffee, Green Tea &amp; Aloe Vera, Jasmine, Golden Rose. *Upgrade to gel polish (shellac) for $20.' },
+        { name: 'Bomb Spa', price: '$80',
+          desc: '22-minute massage. 7-step treatment with pedi bomb, dissolvable flowers, O2 bubble scrub, collagen mask &amp; cream. +$20 gel upgrade.',
+          full: '22-minute massage. A 7-step treatment: pedi bomb, dissolvable flowers, disposable pedi kit, callus remover, O2 bubble scrub, collagen mask treatment, and collagen massage cream. Plus steamer and hot stone massage with tealight candle wax. Scent options: Japanese Cherry Blossom, Hawaii Citrus, Mother of Pearl, Melon Mango, 24K Crazy Rich, Red Carpet. *Upgrade to gel polish (shellac) for $20.' },
+        { name: 'Collagen Spa Pedicure', price: '$90',
+          desc: '28-minute massage. 9-step CBD-enhanced treatment infused with plant-based collagen. Scents: Rose Gold, Crystal Waters, Fuji Pearl, Spearmint. +$20 gel upgrade.',
+          full: '28-minute massage. A 9-step CBD-enhanced treatment infused with plant-based collagen: foot bath bomber, collagen crystals soak, collagen sugar cane scrub, steamer, collagen cream mask, collagen muscle-relaxing gel, collagen massage lotion, tealight candle &amp; hot stone massage, and paraffin hot wax. Scent options: Rose Gold, Crystal Waters, Fuji Pearl, Spearmint. *Upgrade to gel polish (shellac) for $20.' },
+        { name: 'Herbal Bliss Spa', price: '$100',
+          desc: '35-minute massage. Foot detox &amp; muscle relief — 5-step herbal treatment with Himalayan pink salt, clay mask &amp; aromatherapy oil. +$20 gel upgrade.',
+          full: '&ldquo;Dedicated to your well-being&rdquo; — foot detox and muscle relief. 35-minute massage. A 5-step treatment: Herbal Himalayan pink salt soak, Himalayan soothing scrub, clay mask, aromatherapy oil, and massage oil candle. Plus steamer and hot stone massage with tealight candle wax. Ingredients: shea butter, coconut oil, natural soy wax, olive oil, avocado oil, herbals, Himalayan pink salt, essential oil, glycerin, premium fragrance, no color added. *Upgrade to gel polish (shellac) for $20.' },
       ]
     },
     nails: {
       photo: 'Nails',
       items: [
-        { name: 'Acrylic Full Set', price: '$55',
+        { name: 'Gel X — Full Set', price: '$65',
+          desc: 'Soft gel extensions applied as a full set for a lightweight, natural finish.',
+          full: 'Gel X soft gel extension full set — lightweight, damage-free, and shaped to your preference.' },
+        { name: 'Hybrid Gel — Full Set', price: '$65',
+          desc: 'Acrylic strength with gel flexibility. Odorless, monomer-free, chip-free for 2–4 weeks.',
+          full: 'The best of both worlds. Combines the strength and durability of acrylic with the lightweight flexibility of gel. Applied in layers and cured under LED/UV lamp. Odorless, monomer-free, chip-free finish that lasts 2–4 weeks — stronger than traditional gel, lighter than acrylic, and less damaging to the natural nail.' },
+        { name: 'Hybrid Gel — Fill In', price: '$55',
+          desc: 'Maintain and refresh your existing hybrid gel set.',
+          full: 'Maintenance fill for existing hybrid gel nails.' },
+        { name: 'Acrylic — Full Set', price: '$55',
           desc: 'Beautiful, durable acrylic enhancements shaped to your preference.',
           full: 'Professional acrylic nail enhancement for a durable, long-lasting full set.' },
-        { name: 'Acrylic Fill In', price: '$47',
+        { name: 'Acrylic — Fill In', price: '$47',
           desc: 'Maintain and refresh your existing acrylic set.',
           full: 'Maintenance fill for existing acrylic nails.' },
-        { name: 'Full Set Liqui', price: '$60',
-          desc: 'Liquid acrylic full set for a smooth, natural-looking finish.',
-          full: 'Full set using liquid gel for a smooth, natural-looking finish.' },
-        { name: 'Color Powder Full Set', price: '$50',
+        { name: 'Builder — Full Set', price: '$60',
+          desc: 'Builder gel full set for added strength with a smooth, natural look.',
+          full: 'Builder gel full set — reinforces and lengthens the natural nail with a smooth, natural-looking finish.' },
+        { name: 'Builder — Fill In', price: '$50',
+          desc: 'Builder gel fill-in to maintain your current set.',
+          full: 'Maintenance fill for existing builder gel nails.' },
+        { name: 'Pink &amp; White / Ombre — Full Set', price: '$65',
+          desc: 'Classic French or dreamy ombre fade — timeless elegance.',
+          full: 'Classic pink &amp; white French or trendy ombre gradient full set.' },
+        { name: 'Pink &amp; White / Ombre — Fill In', price: '$60',
+          desc: 'Refresh your pink &amp; white or ombre set at the regrowth line.',
+          full: 'Maintenance fill for existing pink &amp; white or ombre nails.' },
+        { name: 'Dip', price: '$50',
+          desc: 'Long-lasting dip powder with a lightweight, chip-resistant finish.',
+          full: 'Dip powder application for a long-lasting, lightweight, chip-resistant finish.' },
+        { name: 'Full Set Color Powder', price: '$55',
           desc: 'Vibrant color powder applied as a full set enhancement.',
           full: 'Full set using colored acrylic powder for vibrant, chip-resistant color.' },
-        { name: 'Pink & White / Ombre', price: '$60',
-          desc: 'Classic French or dreamy ombre fade — timeless elegance.',
-          full: 'Classic French or trendy ombre gradient nail design.' },
-        { name: 'Fill In Liqui', price: '$50',
-          desc: 'Liquid acrylic fill-in to maintain your current set.',
-          full: 'Maintenance fill for existing liquid gel nails.' },
-        { name: 'Color Powder Refill (same)', price: '$40',
-          desc: 'Color powder refill — same color as your existing set.',
+        { name: 'Color Powder Fill In — Same Color', price: '$45',
+          desc: 'Color powder fill-in using the same color as your existing set.',
           full: 'Refill using the same color powder as your previous set.' },
-        { name: 'Color Powder Refill (change)', price: '$45',
-          desc: 'Color powder refill — switch to a new color.',
+        { name: 'Color Powder Fill In — Change Color', price: '$50',
+          desc: 'Color powder fill-in with a switch to a new color.',
           full: 'Refill with a new color powder of your choice.' },
-        { name: 'Dip + Cuticle & Massage', price: '$50',
-          desc: 'Long-lasting dip powder with cuticle grooming and relaxing hand massage.',
-          full: 'Dip powder application with cuticle grooming and a relaxing hand massage.' },
-        { name: 'Hybrid Gel', price: '$65',
-          desc: 'Combines acrylic strength with gel flexibility. Odorless, monomer-free, chip-free finish lasting 2–4 weeks.',
-          full: 'The best of both worlds. Combines the strength and durability of acrylic with the lightweight flexibility of gel polish. Applied in layers and cured under LED/UV lamp. Odorless, monomer-free, chip-free finish that lasts 2–4 weeks. Stronger than traditional gel, lighter than acrylic, and less damaging to the natural nail.' },
-        { name: 'Gel Manicure', price: '$40',
-          desc: 'Chip-resistant gel polish with a lasting high-shine finish.',
-          full: 'Gel polish application for a glossy, chip-free finish lasting 2+ weeks.' },
         { name: 'Gel Color Only', price: '$30',
           desc: 'Gel color application on existing nails — no shaping.',
           full: 'Gel polish color application only, no manicure service included.' },
-        { name: 'Toe or Finger Color Change', price: '$15',
+        { name: 'Toe or Finger Nails Color Change', price: '$15',
           desc: 'Quick color swap on toes or fingernails.',
           full: 'Quick polish color change for toes or fingernails.' },
-        { name: 'Nail Removal Only', price: '$15',
+        { name: 'Nails Remove Only', price: '$15',
           desc: 'Safe, gentle removal of acrylic, gel, or dip.',
           full: 'Safe removal of existing acrylic, gel, or dip powder nails.' },
-        { name: 'Nail Removal with Service', price: '$7',
-          desc: 'Removal when combined with a new service.',
-          full: 'Nail removal included when booking another nail service.' },
-        { name: 'Paraffin', price: '$8',
-          desc: 'Warm paraffin wax treatment for ultra-soft hands or feet.',
-          full: 'Warm paraffin wax treatment for deep moisture and soft skin.' },
-        { name: 'Design', price: '$5+',
+        { name: 'Nails Remove With Service', price: '$10',
+          desc: 'Discounted removal when combined with a new service.',
+          full: 'Nail removal at a reduced rate when booked alongside another nail service.' },
+        { name: 'Shape — Cut Down &amp; Reshape', price: '$5',
+          desc: 'Custom nail shaping — square, almond, coffin, stiletto &amp; more.',
+          full: 'Cut down and reshape your nails to your preferred style.' },
+        { name: 'Length', price: '$5 &amp; up',
+          desc: 'Additional length added to any nail service.',
+          full: 'Extra charge for additional nail length. Price varies by length.' },
+        { name: 'Design', price: '$5 &amp; up',
           desc: 'Nail art and custom designs — ask your tech for options.',
           full: 'Custom nail art and designs. Price varies by complexity.' },
-        { name: 'Shape', price: '$5',
-          desc: 'Custom nail shaping — square, almond, coffin, stiletto & more.',
-          full: 'Nail reshaping service to your preferred style.' },
-        { name: 'French or Color Tip', price: '$5',
-          desc: 'Classic French tips or custom color tip upgrade.',
-          full: 'Classic French tip or colored tip accent.' },
-        { name: 'Length', price: '$5+',
-          desc: 'Additional length added to any nail service.',
-          full: 'Extra charge for additional nail length. Price varies.' },
-        { name: 'Add Gel Color to Service', price: '$20',
-          desc: 'Upgrade any service with long-lasting gel color.',
-          full: 'Upgrade any service with gel polish for a long-lasting finish.' },
-        { name: 'Extra Massage', price: '$1/min',
-          desc: 'Extend your relaxation with additional massage time.',
-          full: 'Additional massage time at $1 per minute.' },
+        { name: 'French', price: '$5 – $40',
+          desc: 'Classic French tips — price varies by style and nail type.',
+          full: 'Classic French tip finish. Price varies by style, nail type, and complexity.' },
       ]
     },
     waxing: {
@@ -1503,30 +1556,47 @@ footer { background: var(--black); padding: 80px 0 40px; }
         { name: 'Eyebrows', price: '$12',
           desc: 'Perfectly shaped brows with precise, gentle waxing.',
           full: 'Professional eyebrow shaping and hair removal.' },
-        { name: 'Chin or Lip', price: '$10',
+        { name: 'Lip or Chin', price: '$10 &amp; up',
           desc: 'Quick and clean waxing for smooth, hair-free skin.',
-          full: 'Gentle facial hair removal for chin or upper lip area.' },
-        { name: 'Full Arm', price: '$45',
-          desc: 'Smooth, hair-free arms — wrist to shoulder.',
-          full: 'Complete hair removal for both arms, wrist to shoulder.' },
-        { name: 'Half Arm', price: '$35',
-          desc: 'Waxing from wrist to elbow for quick refreshing results.',
-          full: 'Hair removal for lower or upper arm section.' },
-        { name: 'Full Leg', price: '$55',
-          desc: 'Complete leg waxing from ankle to upper thigh.',
-          full: 'Complete hair removal for both legs, ankle to upper thigh.' },
-        { name: 'Half Leg', price: '$35',
-          desc: 'Waxing from ankle to knee — perfect for seasonal upkeep.',
-          full: 'Hair removal for lower or upper leg section.' },
-        { name: 'Under Arms', price: '$25',
-          desc: 'Gentle underarm waxing for long-lasting smoothness.',
-          full: 'Quick and clean underarm hair removal.' },
-        { name: 'Back', price: '$45',
-          desc: 'Full back waxing for clean, confident skin.',
-          full: 'Full back hair removal for smooth, clean results.' },
-        { name: 'Whole Face', price: '$40',
+          full: 'Gentle facial hair removal for the upper lip or chin area.' },
+        { name: 'Whole Face', price: '$45 &amp; up',
           desc: 'Complete facial waxing for smooth, hair-free skin everywhere.',
           full: 'Complete facial hair removal including forehead, cheeks, chin, upper lip, and sideburns.' },
+        { name: 'Full Arms', price: '$55 &amp; up',
+          desc: 'Smooth, hair-free arms — wrist to shoulder.',
+          full: 'Complete hair removal for both arms, wrist to shoulder.' },
+        { name: 'Half Arms', price: '$35 &amp; up',
+          desc: 'Waxing from wrist to elbow for quick refreshing results.',
+          full: 'Hair removal for the lower or upper arm section.' },
+        { name: 'Underarms', price: '$25 &amp; up',
+          desc: 'Gentle underarm waxing for long-lasting smoothness.',
+          full: 'Quick and clean underarm hair removal.' },
+        { name: 'Full Legs', price: '$55 &amp; up',
+          desc: 'Complete leg waxing from ankle to upper thigh.',
+          full: 'Complete hair removal for both legs, ankle to upper thigh.' },
+        { name: 'Half Legs', price: '$40 &amp; up',
+          desc: 'Waxing from ankle to knee — perfect for seasonal upkeep.',
+          full: 'Hair removal for the lower or upper leg section.' },
+        { name: 'Back', price: '$45 &amp; up',
+          desc: 'Full back waxing for clean, confident skin.',
+          full: 'Full back hair removal for smooth, clean results.' },
+        { name: 'Brows Tinting', price: '$45 &amp; up',
+          desc: 'Semi-permanent tint to define and darken your brows.',
+          full: 'Semi-permanent brow tinting to add definition, depth, and color that lasts for weeks.' },
+      ]
+    },
+    eyelash: {
+      photo: 'Eyelash',
+      items: [
+        { name: 'Eyelash Strips', price: '$25',
+          desc: 'Full-strip lashes applied for instant volume — perfect for events.',
+          full: 'Full-strip eyelash application for instant volume and length. Ideal for weddings, events, and nights out.' },
+        { name: 'Eye Lash Cluster', price: '$45',
+          desc: 'Cluster lashes for fuller, longer-lasting volume.',
+          full: 'Cluster eyelash application placed in small groups for fuller, more natural volume that lasts longer than strips.' },
+        { name: 'Eyelash Individuals', price: '$120',
+          desc: 'Individually applied extensions for a natural, customized, long-lasting look.',
+          full: 'Individual eyelash extensions applied lash by lash for the most natural, fully customized look with the longest wear.' },
       ]
     }
   };
@@ -1571,12 +1641,13 @@ footer { background: var(--black); padding: 80px 0 40px; }
       </div>
     `).join('');
 
-    const imgMap = { manicures: 'images/service-manicure.jpg', pedicures: 'images/service-pedicure.jpg', nails: 'images/service-nails.jpg', waxing: 'images/service-waxing.jpg' };
+    const imgMap = { manicures: 'images/service-manicure.jpg', pedicures: 'images/service-pedicure.jpg', nails: 'images/service-nails.jpg', waxing: 'images/service-waxing.jpg', eyelash: 'images/service-eyelash.jpg' };
     wrap.innerHTML = `
       <div class="services-layout" id="servicesLayout">
         <div class="services-cards-col">${cards}</div>
         <div class="services-photo-col">
-          <img src="${imgMap[tab]}" alt="${cat.photo}" class="services-photo-img">
+          <img src="${imgMap[tab]}" alt="${cat.photo}" class="services-photo-img"
+               onerror="this.onerror=null;this.src='images/service-waxing.jpg';">
         </div>
       </div>
     `;
