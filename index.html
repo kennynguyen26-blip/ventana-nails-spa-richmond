@@ -1046,6 +1046,25 @@ footer { background: var(--black); padding: 80px 0 40px; }
   display: flex; align-items: center;
 }
 .lang-switch-btn:hover { transform: scale(1.25); }
+
+a:focus-visible, button:focus-visible { outline:3px solid #D4AF37; outline-offset:2px; }
+/* ===== LEGAL + COOKIE CONSENT ===== */
+.legal-bar { width:100%; padding-top:12px; margin-top:10px; border-top:1px solid rgba(255,255,255,0.12); text-align:center; }
+.legal-bar p { margin:4px 0; font-size:12px; line-height:1.6; color:rgba(255,255,255,0.6); }
+.legal-links a, .legal-cookie-btn { color:rgba(255,255,255,0.75); text-decoration:underline; text-underline-offset:2px; }
+.legal-cookie-btn { background:none; border:0; padding:0; font:inherit; cursor:pointer; }
+.legal-links a:focus-visible, .legal-cookie-btn:focus-visible, .cc-btn:focus-visible { outline:3px solid #D4AF37; outline-offset:2px; }
+.map-consent { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:20px; text-align:center; background:#F1E9DA; color:#1C1915; font-size:14px; }
+.map-consent[hidden] { display:none; }
+.cookie-banner { position:fixed; left:16px; right:16px; bottom:16px; z-index:10000; max-width:560px; margin:0 auto; background:#1C1915; color:#fff; border-radius:14px; padding:18px 20px; box-shadow:0 20px 50px rgba(0,0,0,0.3); font-size:14px; line-height:1.55; }
+.cookie-banner[hidden] { display:none; }
+.cookie-banner p { margin:0 0 12px; color:rgba(255,255,255,0.85); }
+.cookie-banner a { color:#E6C550; }
+.cc-actions { display:flex; gap:10px; flex-wrap:wrap; }
+.cc-btn { flex:1 1 140px; min-height:44px; border-radius:999px; font:inherit; font-weight:600; cursor:pointer; padding:10px 18px; }
+.cc-accept { background:#D4AF37; color:#1C1915; border:1px solid #D4AF37; }
+.cc-decline { background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.5); }
+@media (max-width:700px) { .cookie-banner { bottom:84px; } }
 </style>
 </head>
 <body>
@@ -1244,27 +1263,27 @@ footer { background: var(--black); padding: 80px 0 40px; }
     </div>
     <div class="gallery-grid">
       <div class="gallery-item fade-in stagger-1">
-        <img src="images/gallery-1.jpg" alt="Nail Art" class="gallery-img">
+        <img src="images/gallery-1.jpg" alt="Nail art design by Ventana Nails &amp; Spa Richmond" class="gallery-img">
         <div class="gallery-overlay"><span class="gallery-label">Nail Art</span></div>
       </div>
       <div class="gallery-item fade-in stagger-2">
-        <img src="images/gallery-2.jpg" alt="Pedicure" class="gallery-img">
+        <img src="images/gallery-2.jpg" alt="Spa pedicure at Ventana Nails &amp; Spa Richmond" class="gallery-img">
         <div class="gallery-overlay"><span class="gallery-label">Pedicure</span></div>
       </div>
       <div class="gallery-item fade-in stagger-3">
-        <img src="images/gallery-3.jpg" alt="Interior" class="gallery-img">
+        <img src="images/gallery-3.jpg" alt="Inside the Ventana Nails &amp; Spa Richmond salon" class="gallery-img">
         <div class="gallery-overlay"><span class="gallery-label">Our Interior</span></div>
       </div>
       <div class="gallery-item fade-in stagger-4">
-        <img src="images/gallery-4.jpg" alt="Manicure" class="gallery-img">
+        <img src="images/gallery-4.jpg" alt="Manicure at Ventana Nails &amp; Spa Richmond" class="gallery-img">
         <div class="gallery-overlay"><span class="gallery-label">Manicure</span></div>
       </div>
       <div class="gallery-item fade-in stagger-5">
-        <img src="images/gallery-5.jpg" alt="Spa Experience" class="gallery-img">
+        <img src="images/gallery-5.jpg" alt="Relaxing spa experience at Ventana Nails &amp; Spa Richmond" class="gallery-img">
         <div class="gallery-overlay"><span class="gallery-label">Spa Experience</span></div>
       </div>
       <div class="gallery-item fade-in stagger-6">
-        <img src="images/gallery-6.jpg" alt="Nail Design" class="gallery-img">
+        <img src="images/gallery-6.jpg" alt="Custom nail design at Ventana Nails &amp; Spa Richmond" class="gallery-img">
         <div class="gallery-overlay"><span class="gallery-label">Nail Design</span></div>
       </div>
     </div>
@@ -1371,11 +1390,11 @@ footer { background: var(--black); padding: 80px 0 40px; }
         </a>
       </div>
       <div class="map-container fade-in stagger-2">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.8!2d-95.7505!3d29.6397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640dc4e2e7d4f4f%3A0x0!2s9711%20Mason%20Rd%20Ste%20120%2C%20Richmond%2C%20TX%2077407!5e0!3m2!1sen!2sus!4v1699999999999"
+        <iframe data-consent-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.8!2d-95.7505!3d29.6397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640dc4e2e7d4f4f%3A0x0!2s9711%20Mason%20Rd%20Ste%20120%2C%20Richmond%2C%20TX%2077407!5e0!3m2!1sen!2sus!4v1699999999999"
           allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           title="Ventana Nails & Spa Richmond location">
         </iframe>
+      <div class="map-consent" id="mapConsent"><p>The map is provided by Google, which sets its own cookies.</p><button type="button" class="cc-btn cc-accept" data-cc-accept>Accept cookies &amp; load map</button></div>
       </div>
     </div>
   </div>
@@ -1419,9 +1438,10 @@ footer { background: var(--black); padding: 80px 0 40px; }
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Ventana Nails & Spa Richmond. All rights reserved.</p>
+      <p>© 2026 Ventana Nails &amp; Spa Richmond. All rights reserved.</p>
       <p>Richmond, TX 77407</p>
     </div>
+    <div class="legal-bar"><p class="legal-note">Results vary. Please tell your technician about any allergies, skin, or health conditions before your service. Prices are subject to change.</p><p class="legal-links"><a href="/terms.html">Terms of Use</a> &middot; <a href="/privacy.html">Privacy Policy</a> &middot; <a href="/accessibility.html">Accessibility</a> &middot; <button type="button" class="legal-cookie-btn" data-cc-open>Cookie Settings</button></p></div>
   </div>
 </footer>
 
@@ -1783,6 +1803,43 @@ footer { background: var(--black); padding: 80px 0 40px; }
     });
   }
 
+})();
+</script>
+
+<!-- ===== COOKIE CONSENT ===== -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+  <p>We use essential storage to remember your language choice. With your OK, we'll also load Google Maps, which sets its own cookies. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+  <div class="cc-actions">
+    <button type="button" class="cc-btn cc-decline" data-cc-decline>Decline</button>
+    <button type="button" class="cc-btn cc-accept" data-cc-accept>Accept</button>
+  </div>
+</div>
+<script>
+(function () {
+  var KEY = 'ventana_cookie_consent';
+  function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function set(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  var banner = document.getElementById('cookieBanner');
+  var ph = document.getElementById('mapConsent');
+  function apply(v) {
+    var frames = document.querySelectorAll('iframe[data-consent-src]');
+    for (var i = 0; i < frames.length; i++) {
+      if (v === 'accepted') { if (!frames[i].getAttribute('src')) frames[i].src = frames[i].getAttribute('data-consent-src'); }
+      else { frames[i].removeAttribute('src'); }
+    }
+    if (ph) { ph.hidden = (v === 'accepted'); if (ph.parentNode) ph.parentNode.style.position = 'relative'; }
+  }
+  function choose(v) { set(v); apply(v); banner.hidden = true; }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target.closest('[data-cc-accept],[data-cc-decline],[data-cc-open]') : null;
+    if (!t) return;
+    if (t.hasAttribute('data-cc-accept')) choose('accepted');
+    else if (t.hasAttribute('data-cc-decline')) choose('declined');
+    else { banner.hidden = false; var b = banner.querySelector('.cc-accept'); if (b) b.focus(); }
+  });
+  var cur = get();
+  apply(cur);
+  if (!cur) banner.hidden = false;
 })();
 </script>
 </body>
