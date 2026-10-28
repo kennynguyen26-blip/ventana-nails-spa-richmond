@@ -1,0 +1,6 @@
+# Ventana Nails & Spa Richmond — search engine rules
+User-agent: *
+Allow: /
+Disallow: /images-originals/
+
+Sitemap: https://ventananailsspa.business/sitemap.xml

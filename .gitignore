@@ -15,3 +15,9 @@ Thumbs.db
 
 # Node (if ever added)
 node_modules/
+
+# Full-size photo originals (kept locally, not uploaded)
+images-originals/
+
+# Local Claude Code settings
+.claude/
