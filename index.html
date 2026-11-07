@@ -283,6 +283,20 @@ h1, h2, h3, h4 { font-family: var(--font-h); font-weight: 400; line-height: 1.12
 .tab-btn.active, .tab-btn[aria-selected="true"] { background: var(--ink); color: var(--gold-lt); }
 .tab-btn.active::after, .tab-btn[aria-selected="true"]::after { opacity: 1; transform: none; }
 .menu-photo[hidden] { display: none; }
+
+/* Cash / Card price toggle. Every $ amount is rendered twice: .pc (cash) and .pk (card = cash + 2%). */
+.pk { display: none; }
+html.pay-card .pk { display: inline; }
+html.pay-card .pc { display: none; }
+.pay-wrap { margin-bottom: 18px; }
+.pay-toggle { display: inline-flex; padding: 4px; gap: 4px; border-radius: 999px; background: var(--white); border: 1px solid var(--sand-dk); }
+.pay-btn {
+  min-width: 84px; padding: 9px 20px; border-radius: 999px; background: var(--white); color: var(--ink);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; transition: var(--t);
+}
+.pay-btn:hover { background: var(--sand); }
+.pay-btn[aria-pressed="true"] { background: var(--gold); color: var(--ink); box-shadow: 0 2px 8px rgba(212,175,55,0.35); }
+.pay-note { margin-top: 8px; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
 .menu-photo { margin: 0; border-radius: 22px; overflow: hidden; aspect-ratio: 4 / 5; box-shadow: var(--shadow-md); background: var(--sand); }
 .menu-photo img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
 
@@ -723,6 +737,13 @@ a:focus-visible, button:focus-visible { outline:3px solid #D4AF37; outline-offse
     </div>
     <div class="menu-layout">
       <aside class="menu-side fade-up stagger-1">
+        <div class="pay-wrap">
+          <div class="pay-toggle" role="group" aria-label="Show prices for" data-i18n-aria="pay.aria">
+            <button type="button" class="pay-btn" data-pay="cash" aria-pressed="true" data-i18n="pay.cash">Cash</button>
+            <button type="button" class="pay-btn" data-pay="card" aria-pressed="false" data-i18n="pay.card">Card</button>
+          </div>
+          <p class="pay-note"><span class="pc" data-i18n="pay.noteCash">Prices shown are cash. Card payments add 2%.</span><span class="pk" data-i18n="pay.noteCard">Card prices include a 2% card fee.</span></p>
+        </div>
         <div class="service-tabs" role="tablist" aria-label="Service categories" data-i18n-aria="tabs.aria">
           <button class="tab-btn active" role="tab" id="tab-manicures" aria-selected="true" aria-controls="services-layout-wrap" tabindex="0" data-tab="manicures" data-i18n="tabs.manicures">Manicures</button>
           <button class="tab-btn" role="tab" id="tab-pedicures" aria-selected="false" aria-controls="services-layout-wrap" tabindex="-1" data-tab="pedicures" data-i18n="tabs.pedicures">Pedicures</button>
@@ -1154,6 +1175,8 @@ a:focus-visible, button:focus-visible { outline:3px solid #D4AF37; outline-offse
       'intro.text': 'Where beauty meets relaxation. Our talented team delivers exceptional nail care in a warm, inviting atmosphere. From classic manicures to luxurious spa pedicures, every visit is designed to leave you feeling pampered, refreshed, and beautiful.',
       'services.tag': 'What We Offer', 'services.title1': 'Our', 'services.title2': 'Services',
       'tabs.aria': 'Service categories', 'tabs.manicures': 'Manicures', 'tabs.pedicures': 'Pedicures', 'tabs.nails': 'Nails', 'tabs.eyelash': 'Eyelash', 'tabs.waxing': 'Waxing', 'tabs.drinks': 'Drinks Menu',
+      'pay.aria': 'Show prices for', 'pay.cash': 'Cash', 'pay.card': 'Card',
+      'pay.noteCash': 'Prices shown are cash. Card payments add 2%.', 'pay.noteCard': 'Card prices include a 2% card fee.',
       'svc.book': 'Book', 'svc.see': 'See Details ▼', 'svc.hide': 'Hide Details ▲',
       'svc.alt.manicures': "Nail technician carefully applying polish to a client's fingernail",
       'svc.alt.pedicures': 'Freshly pedicured feet with a pink orchid on a wooden floor',
@@ -1235,6 +1258,8 @@ a:focus-visible, button:focus-visible { outline:3px solid #D4AF37; outline-offse
       'intro.text': 'Donde la belleza se encuentra con la relajación. Nuestro talentoso equipo ofrece un cuidado de uñas excepcional en un ambiente cálido y acogedor. Desde manicuras clásicas hasta lujosas pedicuras spa, cada visita está pensada para que salgas consentida, renovada y hermosa.',
       'services.tag': 'Lo Que Ofrecemos', 'services.title1': 'Nuestros', 'services.title2': 'Servicios',
       'tabs.aria': 'Categorías de servicios', 'tabs.manicures': 'Manicuras', 'tabs.pedicures': 'Pedicuras', 'tabs.nails': 'Uñas', 'tabs.eyelash': 'Pestañas', 'tabs.waxing': 'Depilación', 'tabs.drinks': 'Menú de Bebidas',
+      'pay.aria': 'Mostrar precios en', 'pay.cash': 'Efectivo', 'pay.card': 'Tarjeta',
+      'pay.noteCash': 'Los precios mostrados son en efectivo. Los pagos con tarjeta tienen un cargo del 2%.', 'pay.noteCard': 'Los precios con tarjeta incluyen un cargo del 2%.',
       'svc.book': 'Reservar', 'svc.see': 'Ver Detalles ▼', 'svc.hide': 'Ocultar Detalles ▲',
       'svc.alt.manicures': 'Técnica de uñas aplicando esmalte con cuidado en la uña de una clienta',
       'svc.alt.pedicures': 'Pies con pedicura recién hecha junto a una orquídea rosa sobre piso de madera',
@@ -1656,6 +1681,22 @@ a:focus-visible, button:focus-visible { outline:3px solid #D4AF37; outline-offse
   const tabs = $$('.tab-btn');
   let currentTab = 'manicures';
 
+  /* ─── CASH / CARD PRICES: card = cash + 2%, worked out here so only the cash price is kept in `data` ─── */
+  const CARD_FEE = 0.02;
+  const cardAmount = n => {
+    const cents = Math.round(Math.round(n * 100) * (1 + CARD_FEE));
+    return cents % 100 ? (cents / 100).toFixed(2) : String(cents / 100);
+  };
+  // Takes already-escaped text and shows every "$N" as a cash price and a card price.
+  const dualPrice = html => html.replace(/\$(\d+(?:\.\d{1,2})?)/g, (m, n) =>
+    `<span class="pc">${m}</span><span class="pk">$${cardAmount(parseFloat(n))}</span>`);
+  const payBtns = $$('.pay-btn');
+  payBtns.forEach(btn => btn.addEventListener('click', () => {
+    const card = btn.dataset.pay === 'card';
+    document.documentElement.classList.toggle('pay-card', card);
+    payBtns.forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+  }));
+
   function renderServices(tab) {
     if (tab === 'drinks') {
       // The 32 drink photos are only created the first time this tab is opened, and each one is lazy-loaded.
@@ -1677,13 +1718,13 @@ a:focus-visible, button:focus-visible { outline:3px solid #D4AF37; outline-offse
           <div class="menu-row-main">
             <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="svc-${tab}-${i}">
               <span class="menu-name">${esc(svcText(tab, i, 'name', s.name))}${CHEV}</span>
-              <span class="menu-short">${esc(svcText(tab, i, 'desc', s.desc))}</span>
+              <span class="menu-short">${dualPrice(esc(svcText(tab, i, 'desc', s.desc)))}</span>
               <span class="menu-hint">${esc(t('svc.see'))}</span>
             </button>
-            <span class="menu-price">${esc(svcText(tab, i, 'price', s.price))}${sub ? `<small>${esc(sub)}</small>` : ''}</span>
+            <span class="menu-price">${dualPrice(esc(svcText(tab, i, 'price', s.price)))}${sub ? `<small>${dualPrice(esc(sub))}</small>` : ''}</span>
             <a href="${esc(LINKS.BOOKING)}" target="_blank" rel="noopener" class="menu-book">${esc(t('svc.book'))}</a>
           </div>
-          <div class="menu-more" id="svc-${tab}-${i}"><div class="menu-more-inner"><p>${esc(svcText(tab, i, 'full', s.full))}</p></div></div>
+          <div class="menu-more" id="svc-${tab}-${i}"><div class="menu-more-inner"><p>${dualPrice(esc(svcText(tab, i, 'full', s.full)))}</p></div></div>
         </div>`; }).join('');
       wrap.innerHTML = `<div class="menu-list">${rows}</div>`;
     }
